@@ -1,1 +1,2363 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Comandos | Rumic Economy Bot</title>
+  <meta
+    name="description"
+    content="Lista de comandos de Rumic Economy Bot con descripción, estructura y ejemplos de uso."
+  />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a href="./index.html" class="brand">
+        <span class="brand-icon">🪙</span>
+        <span>Rumic Economy Bot</span>
+      </a>
 
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+        ☰
+      </button>
+
+      <div class="nav-links" id="navLinks">
+        <a href="./index.html#caracteristicas">Características</a>
+        <a href="./index.html#sistemas">Sistemas</a>
+        <a href="./commands.html">Comandos</a>
+        <a href="./index.html#faq">FAQ</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="commands-hero">
+      <p class="eyebrow">Guía de comandos</p>
+      <h1>
+        Comandos de
+        <span>Rumic Economy Bot</span>
+      </h1>
+      <p>
+        Aquí tienes la lista de comandos con descripción, estructura y ejemplo
+        de uso. Los comandos administrativos requieren permisos de administrador
+        en el servidor.
+      </p>
+    </section>
+
+    <section class="commands-page">
+      <div class="command-toolbar">
+        <input
+          id="commandSearch"
+          class="command-search"
+          type="search"
+          placeholder="Buscar comando, ejemplo: shop, wordle, cooldown..."
+        />
+
+        <select id="categoryFilter" class="command-filter">
+          <option value="all">Todas las categorías</option>
+          <option value="economy">Economía</option>
+          <option value="shop">Tienda</option>
+          <option value="games">Juegos</option>
+          <option value="missions">Misiones</option>
+          <option value="config">Config</option>
+          <option value="admin-shop">Admin: Tienda</option>
+          <option value="admin-economy">Admin: Economía</option>
+          <option value="admin-games">Admin: Juegos</option>
+          <option value="admin-crates">Admin: Crates</option>
+          <option value="admin-missions">Admin: Misiones</option>
+          <option value="admin-perms">Admin: Permisos</option>
+          <option value="admin-settings">Admin: Config</option>
+        </select>
+      </div>
+      <div class="command-category" data-category="economy">
+        <h2>💰 Economía</h2>
+
+        <div class="command-list">
+          <article class="command-card">
+            <h3>balance / bal</h3>
+            <p>Muestra tu dinero o el de otro usuario.</p>
+            <div class="command-code">
+              <span>Estructura</span>
+              <code>!balance [@usuario]</code>
+            </div>
+            <div class="command-code">
+              <span>Ejemplo</span>
+              <code>!balance @Neko</code>
+            </div>
+          </article>
+
+          <article class="command-card">
+            <h3>daily</h3>
+            <p>Reclama tu recompensa diaria.</p>
+            <div class="command-code">
+              <span>Estructura</span>
+              <code>!daily</code>
+            </div>
+            <div class="command-code">
+              <span>Ejemplo</span>
+              <code>!daily</code>
+            </div>
+          </article>
+
+          <article class="command-card">
+            <h3>work</h3>
+            <p>Trabaja para ganar monedas.</p>
+            <div class="command-code">
+              <span>Estructura</span>
+              <code>!work</code>
+            </div>
+            <div class="command-code">
+              <span>Ejemplo</span>
+              <code>!work</code>
+            </div>
+          </article>
+
+          <article class="command-card">
+            <h3>deposit / dep</h3>
+            <p>Pasa dinero de tu wallet al banco.</p>
+            <div class="command-code">
+              <span>Estructura</span>
+              <code>!deposit &lt;cantidad|all|todo&gt;</code>
+            </div>
+            <div class="command-code">
+              <span>Ejemplo</span>
+              <code>!deposit 500</code>
+            </div>
+          </article>
+
+          <article class="command-card">
+            <h3>withdraw / with</h3>
+            <p>Saca dinero del banco a tu wallet.</p>
+            <div class="command-code">
+              <span>Estructura</span>
+              <code>!withdraw &lt;cantidad|all|todo&gt;</code>
+            </div>
+            <div class="command-code">
+              <span>Ejemplo</span>
+              <code>!withdraw all</code>
+            </div>
+          </article>
+
+          <article class="command-card">
+            <h3>pay</h3>
+            <p>Envía dinero a otro usuario desde tu wallet.</p>
+            <div class="command-code">
+              <span>Estructura</span>
+              <code>!pay @usuario &lt;cantidad|all|todo&gt;</code>
+            </div>
+            <div class="command-code">
+              <span>Ejemplo</span>
+              <code>!pay @Neko 250</code>
+            </div>
+          </article>
+
+          <article class="command-card">
+            <h3>leaderboard / lb</h3>
+            <p>Muestra el top de usuarios más ricos del servidor.</p>
+            <div class="command-code">
+              <span>Estructura</span>
+              <code>!leaderboard</code>
+            </div>
+            <div class="command-code">
+              <span>Ejemplo</span>
+              <code>!lb</code>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="command-category" data-category="shop">
+        <h2>🛒 Tienda</h2>
+
+        <div class="command-list">
+          <article class="command-card">
+            <h3>shop</h3>
+            <p>Abre la tienda del servidor con categorías y páginas.</p>
+            <div class="command-code">
+              <span>Estructura</span>
+              <code>!shop</code>
+            </div>
+            <div class="command-code">
+              <span>Ejemplo</span>
+              <code>!shop</code>
+            </div>
+          </article>
+
+          <article class="command-card">
+            <h3>buy</h3>
+            <p>Compra un item de la tienda.</p>
+            <div class="command-code">
+              <span>Estructura</span>
+              <code>!buy &lt;item&gt;</code>
+            </div>
+            <div class="command-code">
+              <span>Ejemplo</span>
+              <code>!buy espada</code>
+            </div>
+          </article>
+
+          <article class="command-card">
+            <h3>use</h3>
+            <p>Usa un item de tu inventario.</p>
+            <div class="command-code">
+              <span>Estructura</span>
+              <code>!use &lt;item&gt;</code>
+            </div>
+            <div class="command-code">
+              <span>Ejemplo</span>
+              <code>!use crate_rara</code>
+            </div>
+          </article>
+
+          <article class="command-card">
+            <h3>inventory / inv</h3>
+            <p>Muestra tu inventario.</p>
+            <div class="command-code">
+              <span>Estructura</span>
+              <code>!inventory</code>
+            </div>
+            <div class="command-code">
+              <span>Ejemplo</span>
+              <code>!inv</code>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="command-category" data-category="games">
+        <h2>🎮 Juegos</h2>
+
+        <div class="command-list">
+          <article class="command-card">
+            <h3>coinflip / cf</h3>
+            <p>Lanza una moneda: cara o cruz.</p>
+            <div class="command-code">
+              <span>Estructura</span>
+              <code>!coinflip</code>
+            </div>
+            <div class="command-code">
+              <span>Ejemplo</span>
+              <code>!cf</code>
+            </div>
+          </article>
+
+          <article class="command-card">
+            <h3>dice / roll</h3>
+            <p>Lanza un dado. Si no indicas caras, usa un d6.</p>
+            <div class="command-code">
+              <span>Estructura</span>
+              <code>!dice [caras]</code>
+            </div>
+            <div class="command-code">
+              <span>Ejemplo</span>
+              <code>!dice 20</code>
+            </div>
+          </article>
+
+          <article class="command-card">
+            <h3>slots</h3>
+            <p>Juega a la tragamonedas apostando dinero.</p>
+            <div class="command-code">
+              <span>Estructura</span>
+              <code>!slots &lt;cantidad&gt;</code>
+            </div>
+            <div class="command-code">
+              <span>Ejemplo</span>
+              <code>!slots 100</code>
+            </div>
+          </article>
+
+          <article class="command-card">
+            <h3>blackjack / bj</h3>
+            <p>Inicia una partida de Blackjack contra el dealer.</p>
+            <div class="command-code">
+              <span>Estructura</span>
+              <code>!blackjack &lt;apuesta&gt;</code>
+            </div>
+            <div class="command-code">
+              <span>Ejemplo</span>
+              <code>!bj 250</code>
+            </div>
+          </article>
+
+          <article class="command-card">
+            <h3>rob / robar</h3>
+            <p>Intenta robar dinero de la wallet de otro usuario.</p>
+            <div class="command-code">
+              <span>Estructura</span>
+              <code>!rob @usuario</code>
+            </div>
+            <div class="command-code">
+              <span>Ejemplo</span>
+              <code>!rob @Neko</code>
+            </div>
+          </article>
+
+          <article class="command-card">
+            <h3>wordle / w</h3>
+            <p>Inicia un Wordle de una categoría configurada.</p>
+            <div class="command-code">
+              <span>Estructura</span>
+              <code>!wordle &lt;categoria&gt;</code>
+            </div>
+            <div class="command-code">
+              <span>Ejemplo</span>
+              <code>!wordle animales</code>
+            </div>
+          </article>
+
+          <article class="command-card">
+            <h3>wordle guess</h3>
+            <p>Intenta adivinar la palabra de tu Wordle activo.</p>
+            <div class="command-code">
+              <span>Estructura</span>
+              <code>!wordle guess &lt;palabra&gt;</code>
+            </div>
+            <div class="command-code">
+              <span>Ejemplo</span>
+              <code>!wordle guess gato</code>
+            </div>
+          </article>
+
+          <article class="command-card">
+            <h3>wordle hint</h3>
+            <p>Muestra la pista temporalmente en el canal.</p>
+            <div class="command-code">
+              <span>Estructura</span>
+              <code>!wordle hint</code>
+            </div>
+            <div class="command-code">
+              <span>Ejemplo</span>
+              <code>!wordle hint</code>
+            </div>
+          </article>
+
+          <article class="command-card">
+            <h3>wordle stop</h3>
+            <p>Abandona tu Wordle activo.</p>
+            <div class="command-code">
+              <span>Estructura</span>
+              <code>!wordle stop</code>
+            </div>
+            <div class="command-code">
+              <span>Ejemplo</span>
+              <code>!wordle stop</code>
+            </div>
+          </article>
+
+          <article class="command-card">
+            <h3>auction start</h3>
+            <p>Inicia una subasta de un item de tu inventario.</p>
+            <div class="command-code">
+              <span>Estructura</span>
+              <code>!auction start &lt;itemId&gt; &lt;cantidad&gt; &lt;precioInicial&gt;</code>
+            </div>
+            <div class="command-code">
+              <span>Ejemplo</span>
+              <code>!auction start espada 1 500</code>
+            </div>
+          </article>
+
+          <article class="command-card">
+            <h3>auction bid</h3>
+            <p>Puja en la subasta activa del canal.</p>
+            <div class="command-code">
+              <span>Estructura</span>
+              <code>!auction bid &lt;cantidad&gt;</code>
+            </div>
+            <div class="command-code">
+              <span>Ejemplo</span>
+              <code>!auction bid 800</code>
+            </div>
+          </article>
+
+          <article class="command-card">
+            <h3>auction info</h3>
+            <p>Muestra la subasta activa del canal.</p>
+            <div class="command-code">
+              <span>Estructura</span>
+              <code>!auction info</code>
+            </div>
+            <div class="command-code">
+              <span>Ejemplo</span>
+              <code>!auction info</code>
+            </div>
+          </article>
+
+          <article class="command-card">
+            <h3>auction cancel</h3>
+            <p>Cancela tu subasta activa si todavía no tiene pujas.</p>
+            <div class="command-code">
+              <span>Estructura</span>
+              <code>!auction cancel</code>
+            </div>
+            <div class="command-code">
+              <span>Ejemplo</span>
+              <code>!auction cancel</code>
+            </div>
+          </article>
+
+          <article class="command-card">
+            <h3>auction end</h3>
+            <p>Finaliza tu subasta y entrega el item al ganador.</p>
+            <div class="command-code">
+              <span>Estructura</span>
+              <code>!auction end</code>
+            </div>
+            <div class="command-code">
+              <span>Ejemplo</span>
+              <code>!auction end</code>
+            </div>
+          </article>
+
+          <article class="command-card">
+            <h3>loteria create money</h3>
+            <p>Crea una lotería con premio de dinero.</p>
+            <div class="command-code">
+              <span>Estructura</span>
+              <code>!loteria create money &lt;precioTicket&gt; &lt;premio&gt;</code>
+            </div>
+            <div class="command-code">
+              <span>Ejemplo</span>
+              <code>!loteria create money 50 5000</code>
+            </div>
+          </article>
+
+          <article class="command-card">
+            <h3>loteria create item</h3>
+            <p>Crea una lotería con premio de item.</p>
+            <div class="command-code">
+              <span>Estructura</span>
+              <code>!loteria create item &lt;precioTicket&gt; &lt;itemId&gt; &lt;cantidad&gt;</code>
+            </div>
+            <div class="command-code">
+              <span>Ejemplo</span>
+              <code>!loteria create item 100 espada 1</code>
+            </div>
+          </article
+
+          <article class="command-card">
+            <h3>loteria create crate</h3>
+            <p>Crea una lotería con premio de crate.</p>
+            <div class="command-code">
+              <span>Estructura</span>
+              <code>!loteria create crate &lt;precioTicket&gt; &lt;crateId&gt;</code>
+            </div>
+            <div class="command-code">
+              <span>Ejemplo</span>
+              <code>!loteria create crate 100 crate_rara</code>
+            </div>
+          </article>
+
+          <article class="command-card">
+            <h3>loteria create role</h3>
+            <p>Crea una lotería con premio de rol.</p>
+            <div class="command-code">
+              <span>Estructura</span>
+              <code>!loteria create role &lt;precioTicket&gt; @rol</code>
+            </div>
+            <div class="command-code">
+              <span>Ejemplo</span>
+              <code>!loteria create role 250 @VIP</code>
+            </div>
+          </article>
+
+          <article class="command-card">
+            <h3>loteria buy</h3>
+            <p>Compra tickets para la lotería activa.</p>
+            <div class="command-code">
+              <span>Estructura</span>
+              <code>!loteria buy [cantidad]</code>
+            </div>
+            <div class="command-code">
+              <span>Ejemplo</span>
+              <code>!loteria buy 3</code>
+            </div>
+          </article>
+
+          <article class="command-card">
+            <h3>loteria info</h3>
+            <p>Muestra la lotería activa.</p>
+            <div class="command-code">
+              <span>Estructura</span>
+              <code>!loteria info</code>
+            </div>
+            <div class="command-code">
+              <span>Ejemplo</span>
+              <code>!loteria info</code>
+            </div>
+          </article>
+
+          <article class="command-card">
+            <h3>loteria draw</h3>
+            <p>Sortea un ganador de la lotería activa.</p>
+            <div class="command-code">
+              <span>Estructura</span>
+              <code>!loteria draw</code>
+            </div>
+            <div class="command-code">
+              <span>Ejemplo</span>
+              <code>!loteria draw</code>
+            </div>
+          </article>
+
+          <article class="command-card">
+            <h3>loteria cancel</h3>
+            <p>Cancela la lotería activa.</p>
+            <div class="command-code">
+              <span>Estructura</span>
+              <code>!loteria cancel</code>
+            </div>
+            <div class="command-code">
+              <span>Ejemplo</span>
+              <code>!loteria cancel</code>
+            </div>
+          </article>
+
+          <article class="command-card">
+            <h3>dd / deathdice</h3>
+            <p>Reta a otro usuario a Death Dice.</p>
+            <div class="command-code">
+              <span>Estructura</span>
+              <code>!dd @usuario &lt;apuesta&gt;</code>
+            </div>
+            <div class="command-code">
+              <span>Ejemplo</span>
+              <code>!dd @Neko 300</code>
+            </div>
+          </article>
+
+          <article class="command-card">
+            <h3>dd accept</h3>
+            <p>Acepta una invitación pendiente de Death Dice.</p>
+            <div class="command-code">
+              <span>Estructura</span>
+              <code>!dd accept</code>
+            </div>
+            <div class="command-code">
+              <span>Ejemplo</span>
+              <code>!dd accept</code>
+            </div>
+          </article>
+
+          <article class="command-card">
+            <h3>dd decline</h3>
+            <p>Rechaza una invitación pendiente de Death Dice.</p>
+            <div class="command-code">
+              <span>Estructura</span>
+              <code>!dd decline</code>
+            </div>
+            <div class="command-code">
+              <span>Ejemplo</span>
+              <code>!dd decline</code>
+            </div>
+          </article>
+
+          <article class="command-card">
+            <h3>dd cancel</h3>
+            <p>Cancela una invitación de Death Dice que enviaste.</p>
+            <div class="command-code">
+              <span>Estructura</span>
+              <code>!dd cancel</code>
+            </div>
+            <div class="command-code">
+              <span>Ejemplo</span>
+              <code>!dd cancel</code>
+            </div>
+          </article>
+
+          <article class="command-card">
+            <h3>dd surrender</h3>
+            <p>Te rindes en una partida activa de Death Dice.</p>
+            <div class="command-code">
+              <span>Estructura</span>
+              <code>!dd surrender [game_id]</code>
+            </div>
+            <div class="command-code">
+              <span>Ejemplo</span>
+              <code>!dd surrender</code>
+            </div>
+          </article>
+        </div>
+      </div>
+       <div class="command-category" data-category="missions">
+  <h2>📜 Misiones</h2>
+
+  <div class="command-list">
+    <article class="command-card">
+      <h3>misiones</h3>
+      <p>Muestra tus misiones activas en formato resumido.</p>
+
+      <div class="command-code">
+        <span>Estructura</span>
+        <code>!misiones</code>
+      </div>
+
+      <div class="command-code">
+        <span>Ejemplo</span>
+        <code>!misiones</code>
+      </div>
+
+      <div class="command-extra">
+        <strong>Uso:</strong>
+        <ul>
+          <li>Sirve para ver rápidamente tus misiones disponibles.</li>
+          <li>Muestra el estado de tus misiones activas.</li>
+          <li>Si el servidor tiene canal de misiones configurado, puede actualizar tu panel de misiones.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="command-card">
+      <h3>mv / misionview / missionview</h3>
+      <p>Muestra el detalle completo de una misión específica.</p>
+
+      <div class="command-code">
+        <span>Estructura corta</span>
+        <code>!mv &lt;id&gt;</code>
+      </div>
+
+      <div class="command-code">
+        <span>Estructura larga</span>
+        <code>!misionview &lt;id&gt;</code>
+      </div>
+
+      <div class="command-code">
+        <span>Alias inglés</span>
+        <code>!missionview &lt;id&gt;</code>
+      </div>
+
+      <div class="command-code">
+        <span>Ejemplo</span>
+        <code>!mv diaria</code>
+      </div>
+
+      <div class="command-extra">
+        <strong>Muestra:</strong>
+        <ul>
+          <li>Título de la misión.</li>
+          <li>Descripción completa.</li>
+          <li>Estado de la misión.</li>
+          <li>Recompensa configurada, si aplica.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="command-card">
+      <h3>misionlist / ml</h3>
+      <p>Muestra tus misiones con descripciones completas.</p>
+
+      <div class="command-code">
+        <span>Estructura</span>
+        <code>!misionlist</code>
+      </div>
+
+      <div class="command-code">
+        <span>Alias</span>
+        <code>!ml</code>
+      </div>
+
+      <div class="command-code">
+        <span>Ejemplo</span>
+        <code>!ml</code>
+      </div>
+
+      <div class="command-extra">
+        <strong>Diferencia con misiones:</strong>
+        <ul>
+          <li><code>!misiones</code> muestra una vista resumida.</li>
+          <li><code>!misionlist</code> muestra una vista más completa con descripciones.</li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</div>
+        
+<div class="command-category" data-category="config">
+  <h2>⚙️ Config</h2>
+
+  <div class="command-list">
+    <article class="command-card">
+      <h3>prefix</h3>
+      <p>Muestra el prefijo actual del servidor.</p>
+
+      <div class="command-code">
+        <span>Estructura</span>
+        <code>!prefix</code>
+      </div>
+
+      <div class="command-code">
+        <span>Ejemplo</span>
+        <code>!prefix</code>
+      </div>
+
+      <div class="command-extra">
+        <strong>Uso:</strong>
+        <ul>
+          <li>Sirve para comprobar con qué prefijo responde el bot en el servidor.</li>
+          <li>Por defecto suele ser <code>!</code>, salvo que se haya cambiado.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="command-card">
+      <h3>setprefix</h3>
+      <p>Cambia el prefijo del bot en el servidor.</p>
+
+      <div class="command-code">
+        <span>Estructura</span>
+        <code>!setprefix &lt;nuevo_prefijo&gt;</code>
+      </div>
+
+      <div class="command-code">
+        <span>Ejemplo</span>
+        <code>!setprefix ?</code>
+      </div>
+
+      <div class="command-extra">
+        <strong>Notas:</strong>
+        <ul>
+          <li>Después de cambiar el prefijo, deberás usar el nuevo prefijo para ejecutar comandos.</li>
+          <li>Ejemplo: si cambias a <code>?</code>, usarías <code>?shop</code>, <code>?daily</code>, etc.</li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</div>
+
+      <div class="command-category" data-category="admin-shop">
+  <h2>🛒 Admin: Tienda</h2>
+
+  <div class="command-list">
+    <article class="command-card">
+      <h3>addreq</h3>
+      <p>Agrega un requisito a un item de la tienda. El usuario deberá cumplir ese requisito para poder comprar el item.</p>
+
+      <div class="command-code">
+        <span>Estructura</span>
+        <code>!addreq &lt;itemId&gt; &lt;role|item&gt; &lt;valor&gt;</code>
+      </div>
+
+      <div class="command-code">
+        <span>Ejemplo: requisito de rol</span>
+        <code>!addreq espada role @VIP</code>
+      </div>
+
+      <div class="command-code">
+        <span>Ejemplo: requisito de item</span>
+        <code>!addreq espada item licencia</code>
+      </div>
+
+      <div class="command-extra">
+        <strong>Tipos de requisito permitidos:</strong>
+        <ul>
+          <li><code>role</code> — el usuario necesita tener un rol específico. Puedes usar una mención de rol o su ID.</li>
+          <li><code>item</code> — el usuario necesita tener un item existente en la tienda.</li>
+        </ul>
+      </div>
+
+      <div class="command-extra">
+        <strong>Notas:</strong>
+        <ul>
+          <li>El <code>itemId</code> debe existir en la tienda.</li>
+          <li>Si usas <code>item</code>, el item requerido también debe existir en la tienda.</li>
+          <li>Este comando no consume el item requerido; solo valida que el usuario lo tenga.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="command-card">
+      <h3>addaction</h3>
+      <p>Agrega una acción a un item. Las acciones se ejecutan cuando el usuario usa el item con <code>!use &lt;item&gt;</code>.</p>
+
+      <div class="command-code">
+        <span>Estructura</span>
+        <code>!addaction &lt;itemId&gt; "nombreAccion" &lt;tipo&gt; &lt;valor&gt;</code>
+      </div>
+
+      <div class="command-code">
+        <span>Ejemplo: dar rol</span>
+        <code>!addaction vip_ticket "dar vip" giverol @VIP</code>
+      </div>
+
+      <div class="command-code">
+        <span>Ejemplo: quitar rol</span>
+        <code>!addaction pase_castigo "quitar vip" delrol @VIP</code>
+      </div>
+
+      <div class="command-code">
+        <span>Ejemplo: alternar rol</span>
+        <code>!addaction toggle_vip "alternar vip" togglerol @VIP</code>
+      </div>
+
+      <div class="command-code">
+        <span>Ejemplo: dar dinero</span>
+        <code>!addaction bolsa "premio" givemoney 500</code>
+      </div>
+
+      <div class="command-code">
+        <span>Ejemplo: quitar dinero</span>
+        <code>!addaction multa "cobrar multa" delmoney 250</code>
+      </div>
+
+      <div class="command-code">
+        <span>Ejemplo: dar item</span>
+        <code>!addaction caja "dar espada" give_item espada 2</code>
+      </div>
+
+      <div class="command-code">
+        <span>Ejemplo: quitar item</span>
+        <code>!addaction llave "consumir llave" remove_item llave 1</code>
+      </div>
+
+      <div class="command-code">
+        <span>Ejemplo: enviar mensaje</span>
+        <code>!addaction pase "mensaje" sendmessage "Hola {user}, ahora tienes {tagrol}"</code>
+      </div>
+
+      <div class="command-extra">
+        <strong>Tipos de acción de dinero:</strong>
+        <ul>
+          <li><code>givemoney</code> — da monedas al usuario.</li>
+          <li><code>delmoney</code> — quita monedas al usuario.</li>
+          <li><code>give_coins</code> — alias para dar monedas.</li>
+          <li><code>remove_coins</code> — alias para quitar monedas.</li>
+        </ul>
+      </div>
+
+      <div class="command-extra">
+        <strong>Tipos de acción de rol:</strong>
+        <ul>
+          <li><code>giverol</code> — da un rol al usuario.</li>
+          <li><code>delrol</code> — quita un rol al usuario.</li>
+          <li><code>togglerol</code> — si el usuario tiene el rol, se lo quita; si no lo tiene, se lo da.</li>
+          <li><code>give_role</code> — alias para dar rol.</li>
+          <li><code>remove_role</code> — alias para quitar rol.</li>
+        </ul>
+      </div>
+
+      <div class="command-extra">
+        <strong>Tipos de acción de item:</strong>
+        <ul>
+          <li><code>give_item</code> — da un item al usuario. Usa <code>&lt;itemId&gt; [cantidad]</code>.</li>
+          <li><code>remove_item</code> — quita un item al usuario. Usa <code>&lt;itemId&gt; [cantidad]</code>.</li>
+        </ul>
+      </div>
+
+      <div class="command-extra">
+        <strong>Tipos de acción de texto:</strong>
+        <ul>
+          <li><code>sendmessage</code> — envía un mensaje generado desde el valor configurado.</li>
+        </ul>
+      </div>
+
+      <div class="command-extra">
+        <strong>Límites y validaciones:</strong>
+        <ul>
+          <li>El <code>itemId</code> debe existir en la tienda.</li>
+          <li>El nombre de la acción no puede superar <code>50</code> caracteres.</li>
+          <li>No pueden existir dos acciones con el mismo nombre en el mismo item.</li>
+          <li>Las cantidades máximas para dinero o items son de <code>1.000.000.000</code>.</li>
+          <li>Los mensajes de <code>sendmessage</code> no pueden superar <code>1000</code> caracteres.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="command-card">
+      <h3>actionlist</h3>
+      <p>Lista todas las acciones configuradas en un item.</p>
+
+      <div class="command-code">
+        <span>Estructura</span>
+        <code>!actionlist &lt;itemId&gt;</code>
+      </div>
+
+      <div class="command-code">
+        <span>Ejemplo</span>
+        <code>!actionlist vip_ticket</code>
+      </div>
+
+      <div class="command-extra">
+        <strong>Muestra:</strong>
+        <ul>
+          <li>Nombre de cada acción.</li>
+          <li>Tipo de acción.</li>
+          <li>Valor configurado.</li>
+          <li>Rol, dinero, item o mensaje según el tipo de acción.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="command-card">
+      <h3>delaction</h3>
+      <p>Elimina una acción de un item usando el nombre de la acción.</p>
+
+      <div class="command-code">
+        <span>Estructura</span>
+        <code>!delaction &lt;itemId&gt; "nombreAccion"</code>
+      </div>
+
+      <div class="command-code">
+        <span>Ejemplo</span>
+        <code>!delaction vip_ticket "dar vip"</code>
+      </div>
+
+      <div class="command-extra">
+        <strong>Notas:</strong>
+        <ul>
+          <li>El <code>itemId</code> debe existir.</li>
+          <li>La acción debe existir en ese item.</li>
+          <li>El nombre de la acción debe ir entre comillas.</li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</div>
+      <div class="command-category" data-category="admin-economy">
+  <h2>💰 Admin: Economía</h2>
+
+  <div class="command-list">
+    <article class="command-card">
+      <h3>give</h3>
+      <p>Da items de la tienda al inventario de un usuario.</p>
+
+      <div class="command-code">
+        <span>Estructura</span>
+        <code>!give @usuario &lt;itemId&gt; [cantidad]</code>
+      </div>
+
+      <div class="command-code">
+        <span>Ejemplo</span>
+        <code>!give @Neko espada 1</code>
+      </div>
+
+      <div class="command-extra">
+        <strong>Notas:</strong>
+        <ul>
+          <li>El <code>itemId</code> debe existir en la tienda.</li>
+          <li>Si no indicas cantidad, se entrega <code>1</code>.</li>
+          <li>La cantidad debe ser un número entero entre <code>1</code> y <code>100.000</code>.</li>
+          <li>Registra la acción en logs si tienes canal de logs configurado.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="command-card">
+      <h3>take</h3>
+      <p>Quita items del inventario de un usuario.</p>
+
+      <div class="command-code">
+        <span>Estructura</span>
+        <code>!take @usuario &lt;itemId&gt; [cantidad]</code>
+      </div>
+
+      <div class="command-code">
+        <span>Ejemplo</span>
+        <code>!take @Neko espada 1</code>
+      </div>
+
+      <div class="command-extra">
+        <strong>Notas:</strong>
+        <ul>
+          <li>El usuario debe tener ese item en su inventario.</li>
+          <li>Si no indicas cantidad, se quita <code>1</code>.</li>
+          <li>La cantidad debe ser un número entero entre <code>1</code> y <code>100.000</code>.</li>
+          <li>Si el usuario no tiene suficientes unidades, el comando no se completa.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="command-card">
+      <h3>addmoney</h3>
+      <p>Añade dinero a la wallet de un usuario o a todos los miembros de un rol.</p>
+
+      <div class="command-code">
+        <span>Estructura: usuario</span>
+        <code>!addmoney @usuario &lt;cantidad&gt;</code>
+      </div>
+
+      <div class="command-code">
+        <span>Estructura: rol</span>
+        <code>!addmoney @rol &lt;cantidad&gt;</code>
+      </div>
+
+      <div class="command-code">
+        <span>Ejemplo: usuario</span>
+        <code>!addmoney @Neko 1000</code>
+      </div>
+
+      <div class="command-code">
+        <span>Ejemplo: rol</span>
+        <code>!addmoney @Miembros 500</code>
+      </div>
+
+      <div class="command-extra">
+        <strong>Funcionamiento:</strong>
+        <ul>
+          <li>Si mencionas un usuario, añade dinero solo a ese usuario.</li>
+          <li>Si mencionas un rol y no un usuario, añade dinero a todos los miembros no bot de ese rol.</li>
+          <li>El dinero se añade a la <code>wallet</code>, no al banco.</li>
+          <li>La cantidad máxima permitida es <code>1.000.000.000</code>.</li>
+        </ul>
+      </div>
+
+      <div class="command-extra">
+        <strong>Notas sobre roles:</strong>
+        <ul>
+          <li>El bot intenta cargar los miembros del servidor antes de aplicar el dinero.</li>
+          <li>Los bots no reciben dinero.</li>
+          <li>El resultado muestra usuarios afectados y fallos si los hubo.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="command-card">
+      <h3>delmoney</h3>
+      <p>Quita dinero de la wallet de un usuario o de todos los miembros de un rol con saldo suficiente.</p>
+
+      <div class="command-code">
+        <span>Estructura: usuario</span>
+        <code>!delmoney @usuario &lt;cantidad&gt;</code>
+      </div>
+
+      <div class="command-code">
+        <span>Estructura: rol</span>
+        <code>!delmoney @rol &lt;cantidad&gt;</code>
+      </div>
+
+      <div class="command-code">
+        <span>Ejemplo: usuario</span>
+        <code>!delmoney @Neko 500</code>
+      </div>
+
+      <div class="command-code">
+        <span>Ejemplo: rol</span>
+        <code>!delmoney @Miembros 250</code>
+      </div>
+
+      <div class="command-extra">
+        <strong>Funcionamiento:</strong>
+        <ul>
+          <li>Si mencionas un usuario, quita dinero solo a ese usuario.</li>
+          <li>Si mencionas un rol y no un usuario, intenta quitar dinero a todos los miembros no bot de ese rol.</li>
+          <li>El dinero se quita de la <code>wallet</code>, no del banco.</li>
+          <li>La cantidad máxima permitida es <code>1.000.000.000</code>.</li>
+        </ul>
+      </div>
+
+      <div class="command-extra">
+        <strong>Notas sobre roles:</strong>
+        <ul>
+          <li>Solo se afecta a usuarios con saldo suficiente en wallet.</li>
+          <li>Los usuarios sin dinero suficiente se cuentan como omitidos.</li>
+          <li>Los bots no son afectados.</li>
+          <li>El resultado muestra usuarios afectados, omitidos y fallos si los hubo.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="command-card">
+      <h3>reseteconomy</h3>
+      <p>Reinicia el dinero e inventarios de todos los usuarios del servidor sin borrar la tienda.</p>
+
+      <div class="command-code">
+        <span>Estructura</span>
+        <code>!reseteconomy confirm</code>
+      </div>
+
+      <div class="command-code">
+        <span>Ejemplo</span>
+        <code>!reseteconomy confirm</code>
+      </div>
+
+      <div class="command-extra">
+        <strong>Este comando borra:</strong>
+        <ul>
+          <li>Dinero de usuarios.</li>
+          <li>Inventarios de usuarios.</li>
+        </ul>
+      </div>
+
+      <div class="command-extra">
+        <strong>Este comando NO borra:</strong>
+        <ul>
+          <li>Items de la tienda.</li>
+          <li>Requisitos de items.</li>
+          <li>Acciones de items.</li>
+          <li>Crates.</li>
+          <li>Misiones.</li>
+          <li>Configuración del servidor.</li>
+        </ul>
+      </div>
+
+      <div class="command-extra">
+        <strong>Confirmación obligatoria:</strong>
+        <ul>
+          <li>Debes escribir exactamente <code>confirm</code>.</li>
+          <li>Si no lo haces, el bot solo mostrará una advertencia.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="command-card">
+      <h3>resetshop</h3>
+      <p>Reinicia la tienda y los inventarios asociados sin tocar el dinero de los usuarios.</p>
+
+      <div class="command-code">
+        <span>Estructura</span>
+        <code>!resetshop confirm</code>
+      </div>
+
+      <div class="command-code">
+        <span>Ejemplo</span>
+        <code>!resetshop confirm</code>
+      </div>
+
+      <div class="command-extra">
+        <strong>Este comando borra:</strong>
+        <ul>
+          <li>Inventarios de usuarios.</li>
+          <li>Items de la tienda.</li>
+          <li>Requisitos de items.</li>
+          <li>Acciones de items.</li>
+        </ul>
+      </div>
+
+      <div class="command-extra">
+        <strong>Este comando NO borra:</strong>
+        <ul>
+          <li>Dinero de usuarios.</li>
+          <li>Crates.</li>
+          <li>Misiones.</li>
+          <li>Configuración del servidor.</li>
+        </ul>
+      </div>
+
+      <div class="command-extra">
+        <strong>Resultado:</strong>
+        <ul>
+          <li>Muestra cuántos registros de inventario fueron eliminados.</li>
+          <li>Muestra cuántos items de tienda fueron eliminados.</li>
+          <li>Muestra cuántos requisitos y acciones fueron eliminados.</li>
+          <li>Registra la acción en logs si tienes canal de logs configurado.</li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</div>
+      <div class="command-category" data-category="admin-games">
+  <h2>🎰 Admin: Juegos</h2>
+
+  <div class="command-list">
+    <article class="command-card">
+      <h3>addslot</h3>
+      <p>Añade o actualiza un símbolo de slots para el servidor.</p>
+
+      <div class="command-code">
+        <span>Estructura</span>
+        <code>!addslot &lt;emoji&gt; &lt;rareza&gt; &lt;multiplicador&gt; &lt;weight&gt; &lt;maxPorColumna&gt;</code>
+      </div>
+
+      <div class="command-code">
+        <span>Ejemplo</span>
+        <code>!addslot 🍒 comun 2 20 2</code>
+      </div>
+
+      <div class="command-code">
+        <span>Ejemplo con otro símbolo</span>
+        <code>!addslot 💎 legendario 10 2 1</code>
+      </div>
+
+      <div class="command-extra">
+        <strong>Parámetros:</strong>
+        <ul>
+          <li><code>emoji</code> — símbolo que aparecerá en la tragamonedas.</li>
+          <li><code>rareza</code> — texto libre guardado en minúsculas. Ejemplos: <code>comun</code>, <code>raro</code>, <code>epico</code>, <code>legendario</code>.</li>
+          <li><code>multiplicador</code> — cuánto multiplica la apuesta cuando el símbolo paga.</li>
+          <li><code>weight</code> — peso/probabilidad relativa de aparición del símbolo.</li>
+          <li><code>maxPorColumna</code> — máximo de veces que ese símbolo puede aparecer por columna.</li>
+        </ul>
+      </div>
+
+      <div class="command-extra">
+        <strong>Límites:</strong>
+        <ul>
+          <li><code>multiplicador</code> debe ser mayor que <code>0</code> y máximo <code>1000</code>.</li>
+          <li><code>weight</code> debe ser un entero entre <code>1</code> y <code>10000</code>.</li>
+          <li><code>maxPorColumna</code> debe estar entre <code>1</code> y <code>3</code>.</li>
+        </ul>
+      </div>
+
+      <div class="command-extra">
+        <strong>Cómo interpretar weight:</strong>
+        <ul>
+          <li>Un símbolo con <code>weight</code> alto aparece más seguido.</li>
+          <li>Un símbolo con <code>weight</code> bajo aparece menos seguido.</li>
+          <li>Ejemplo: un símbolo con <code>weight 40</code> será mucho más común que uno con <code>weight 2</code>.</li>
+        </ul>
+      </div>
+
+      <div class="command-extra">
+        <strong>Notas:</strong>
+        <ul>
+          <li>Si agregas un emoji que ya existe, se actualiza su rareza, multiplicador, weight y máximo por columna.</li>
+          <li>La rareza no tiene una lista cerrada en este archivo; puedes usar nombres personalizados.</li>
+          <li>El orden del listado interno prioriza weight, multiplicador y emoji según la base de datos.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="command-card">
+      <h3>delslot</h3>
+      <p>Elimina un símbolo configurado de slots.</p>
+
+      <div class="command-code">
+        <span>Estructura</span>
+        <code>!delslot &lt;emoji&gt;</code>
+      </div>
+
+      <div class="command-code">
+        <span>Ejemplo</span>
+        <code>!delslot 🍒</code>
+      </div>
+
+      <div class="command-extra">
+        <strong>Notas:</strong>
+        <ul>
+          <li>Debes escribir exactamente el emoji configurado.</li>
+          <li>Si el símbolo no existe, el bot responderá que no lo encontró.</li>
+          <li>Eliminar un símbolo evita que vuelva a salir en la tragamonedas.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="command-card">
+      <h3>listslots</h3>
+      <p>Lista todos los símbolos configurados para slots.</p>
+
+      <div class="command-code">
+        <span>Estructura</span>
+        <code>!listslots</code>
+      </div>
+
+      <div class="command-code">
+        <span>Ejemplo</span>
+        <code>!listslots</code>
+      </div>
+
+      <div class="command-extra">
+        <strong>Muestra:</strong>
+        <ul>
+          <li>Emoji del símbolo.</li>
+          <li>Rareza.</li>
+          <li>Multiplicador.</li>
+          <li>Weight.</li>
+          <li>Máximo por columna.</li>
+          <li>Total de símbolos configurados.</li>
+        </ul>
+      </div>
+
+      <div class="command-extra">
+        <strong>Orden del listado:</strong>
+        <ul>
+          <li>Primero ordena por rareza.</li>
+          <li>Luego por multiplicador.</li>
+          <li>Luego por emoji.</li>
+        </ul>
+      </div>
+    </article>
+    <article class="command-card">
+  <h3>setslotspartialwin</h3>
+  <p>Activa o desactiva el premio parcial de slots cuando salen 2 símbolos iguales.</p>
+
+  <div class="command-code">
+    <span>Estructura</span>
+    <code>!setslotspartialwin &lt;true|false&gt;</code>
+  </div>
+
+  <div class="command-code">
+    <span>Ejemplo: activar</span>
+    <code>!setslotspartialwin true</code>
+  </div>
+
+  <div class="command-code">
+    <span>Ejemplo: desactivar</span>
+    <code>!setslotspartialwin false</code>
+  </div>
+
+  <div class="command-extra">
+    <strong>Valores aceptados:</strong>
+    <ul>
+      <li><code>true</code>, <code>on</code>, <code>1</code>, <code>yes</code>, <code>si</code>, <code>sí</code> — activa el premio parcial.</li>
+      <li><code>false</code>, <code>off</code>, <code>0</code>, <code>no</code> — desactiva el premio parcial.</li>
+    </ul>
+  </div>
+
+  <div class="command-extra">
+    <strong>Comportamiento:</strong>
+    <ul>
+      <li>Activado: las tiradas con 2 símbolos iguales pueden dar premio.</li>
+      <li>Desactivado: solo pagan las tiradas con 3 símbolos iguales.</li>
+    </ul>
+  </div>
+</article>
+
+<article class="command-card">
+  <h3>setbetlimits</h3>
+  <p>Configura la apuesta mínima y máxima global para juegos con apuestas.</p>
+
+  <div class="command-code">
+    <span>Estructura</span>
+    <code>!setbetlimits &lt;min&gt; &lt;max&gt;</code>
+  </div>
+
+  <div class="command-code">
+    <span>Ejemplo</span>
+    <code>!setbetlimits 10 100000</code>
+  </div>
+
+  <div class="command-extra">
+    <strong>Límites:</strong>
+    <ul>
+      <li><code>min</code> debe ser al menos <code>1</code>.</li>
+      <li><code>max</code> no puede ser menor que <code>min</code>.</li>
+      <li><code>max</code> no puede superar <code>1.000.000.000</code>.</li>
+    </ul>
+  </div>
+
+  <div class="command-extra">
+    <strong>Notas:</strong>
+    <ul>
+      <li>Estos límites se guardan como configuración global del servidor.</li>
+      <li>Aplican a los juegos que validan apuestas con la configuración del servidor.</li>
+    </ul>
+  </div>
+</article>
+
+<article class="command-card">
+  <h3>setblackjackdecks</h3>
+  <p>Configura cuántas barajas usa Blackjack.</p>
+
+  <div class="command-code">
+    <span>Estructura</span>
+    <code>!setblackjackdecks &lt;1-8&gt;</code>
+  </div>
+
+  <div class="command-code">
+    <span>Ejemplo</span>
+    <code>!setblackjackdecks 6</code>
+  </div>
+
+  <div class="command-extra">
+    <strong>Valores permitidos:</strong>
+    <ul>
+      <li>Debes elegir un número entero entre <code>1</code> y <code>8</code>.</li>
+      <li><code>1</code> usa una sola baraja.</li>
+      <li><code>8</code> usa ocho barajas.</li>
+    </ul>
+  </div>
+</article>
+
+<article class="command-card">
+  <h3>setrobcooldown</h3>
+  <p>Configura el cooldown específico del comando <code>rob</code>.</p>
+
+  <div class="command-code">
+    <span>Estructura</span>
+    <code>!setrobcooldown &lt;tiempo&gt;</code>
+  </div>
+
+  <div class="command-code">
+    <span>Ejemplo: minutos</span>
+    <code>!setrobcooldown 30m</code>
+  </div>
+
+  <div class="command-code">
+    <span>Ejemplo: horas</span>
+    <code>!setrobcooldown 1h</code>
+  </div>
+
+  <div class="command-code">
+    <span>Ejemplo: desactivar</span>
+    <code>!setrobcooldown 0</code>
+  </div>
+
+  <div class="command-extra">
+    <strong>Formatos aceptados:</strong>
+    <ul>
+      <li><code>ms</code> — milisegundos.</li>
+      <li><code>s</code> — segundos.</li>
+      <li><code>m</code> — minutos.</li>
+      <li><code>h</code> — horas.</li>
+      <li><code>d</code> — días.</li>
+      <li>Si no escribes unidad, se interpreta como minutos.</li>
+    </ul>
+  </div>
+
+  <div class="command-extra">
+    <strong>Desactivar cooldown:</strong>
+    <ul>
+      <li><code>0</code>, <code>off</code>, <code>none</code> o <code>no</code> desactivan el cooldown.</li>
+    </ul>
+  </div>
+
+  <div class="command-extra">
+    <strong>Límite:</strong>
+    <ul>
+      <li>El cooldown máximo permitido para <code>rob</code> es de <code>7 días</code>.</li>
+    </ul>
+  </div>
+</article>
+
+<article class="command-card">
+  <h3>setwordleprize</h3>
+  <p>Configura o desactiva el premio global por completar una partida de Wordle.</p>
+
+  <div class="command-code">
+    <span>Estructura: activar</span>
+    <code>!setwordleprize &lt;cantidad&gt;</code>
+  </div>
+
+  <div class="command-code">
+    <span>Estructura: desactivar</span>
+    <code>!setwordleprize off</code>
+  </div>
+
+  <div class="command-code">
+    <span>Ejemplo: activar</span>
+    <code>!setwordleprize 500</code>
+  </div>
+
+  <div class="command-code">
+    <span>Ejemplo: desactivar</span>
+    <code>!setwordleprize off</code>
+  </div>
+
+  <div class="command-extra">
+    <strong>Valores para desactivar:</strong>
+    <ul>
+      <li><code>off</code>, <code>0</code>, <code>false</code> o <code>no</code> desactivan el premio.</li>
+    </ul>
+  </div>
+
+  <div class="command-extra">
+    <strong>Límites:</strong>
+    <ul>
+      <li>La cantidad debe ser un número entero mayor que <code>0</code>.</li>
+      <li>El premio no puede superar <code>1.000.000.000</code>.</li>
+    </ul>
+  </div>
+
+  <div class="command-extra">
+    <strong>Notas:</strong>
+    <ul>
+      <li>Viene desactivado por defecto.</li>
+      <li>Cuando está activado, el usuario recibe el premio al completar un Wordle.</li>
+    </ul>
+  </div>
+</article>
+  </div>
+</div>
+      <div class="command-category" data-category="admin-crates">
+  <h2>📦 Admin: Crates</h2>
+
+  <div class="command-list">
+    <article class="command-card">
+      <h3>addcrate</h3>
+      <p>Crea una crate nueva.</p>
+
+      <div class="command-code">
+        <span>Estructura</span>
+        <code>!addcrate &lt;id&gt; &lt;nombre&gt;</code>
+      </div>
+
+      <div class="command-code">
+        <span>Ejemplo</span>
+        <code>!addcrate crate_rara Crate Rara</code>
+      </div>
+
+      <div class="command-extra">
+        <strong>Notas:</strong>
+        <ul>
+          <li>El <code>id</code> se guarda en minúsculas.</li>
+          <li>No puedes crear dos crates con el mismo ID.</li>
+          <li>El nombre puede tener espacios.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="command-card">
+      <h3>delcrate</h3>
+      <p>Elimina una crate y sus recompensas asociadas.</p>
+
+      <div class="command-code">
+        <span>Estructura</span>
+        <code>!delcrate &lt;id&gt;</code>
+      </div>
+
+      <div class="command-code">
+        <span>Ejemplo</span>
+        <code>!delcrate crate_rara</code>
+      </div>
+
+      <div class="command-extra">
+        <strong>Notas:</strong>
+        <ul>
+          <li>La crate debe existir.</li>
+          <li>Al eliminarla, también se elimina su configuración interna según tu módulo de base de datos.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="command-card">
+      <h3>listcrates</h3>
+      <p>Lista todas las crates configuradas en el servidor.</p>
+
+      <div class="command-code">
+        <span>Estructura</span>
+        <code>!listcrates</code>
+      </div>
+
+      <div class="command-code">
+        <span>Ejemplo</span>
+        <code>!listcrates</code>
+      </div>
+
+      <div class="command-extra">
+        <strong>Muestra:</strong>
+        <ul>
+          <li>Nombre de la crate.</li>
+          <li>ID de la crate.</li>
+          <li>Si tiene imagen configurada o no.</li>
+          <li>Total de crates configuradas.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="command-card">
+      <h3>setcrateimage</h3>
+      <p>Configura o elimina la imagen de una crate.</p>
+
+      <div class="command-code">
+        <span>Estructura: configurar</span>
+        <code>!setcrateimage &lt;crateId&gt; &lt;url&gt;</code>
+      </div>
+
+      <div class="command-code">
+        <span>Estructura: quitar</span>
+        <code>!setcrateimage &lt;crateId&gt; off</code>
+      </div>
+
+      <div class="command-code">
+        <span>Ejemplo</span>
+        <code>!setcrateimage crate_rara https://example.com/crate.png</code>
+      </div>
+
+      <div class="command-code">
+        <span>Ejemplo: quitar imagen</span>
+        <code>!setcrateimage crate_rara off</code>
+      </div>
+
+      <div class="command-extra">
+        <strong>Notas:</strong>
+        <ul>
+          <li>La crate debe existir.</li>
+          <li>Usa <code>off</code> para eliminar la imagen.</li>
+          <li>Este comando no valida si la URL es real; guarda el valor que escribas.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="command-card">
+      <h3>addcratereward</h3>
+      <p>Añade una recompensa posible dentro de una crate.</p>
+
+      <div class="command-code">
+        <span>Estructura</span>
+        <code>!addcratereward &lt;crateId&gt; &lt;rewardName&gt; &lt;weight&gt;</code>
+      </div>
+
+      <div class="command-code">
+        <span>Ejemplo</span>
+        <code>!addcratereward crate_rara monedas 50</code>
+      </div>
+
+      <div class="command-extra">
+        <strong>Parámetros:</strong>
+        <ul>
+          <li><code>crateId</code> — ID de la crate donde se agregará la recompensa.</li>
+          <li><code>rewardName</code> — nombre interno de la recompensa.</li>
+          <li><code>weight</code> — probabilidad relativa de que salga esa recompensa.</li>
+        </ul>
+      </div>
+
+      <div class="command-extra">
+        <strong>Weight:</strong>
+        <ul>
+          <li>Debe ser un número entero mayor que <code>0</code>.</li>
+          <li>Una recompensa con más <code>weight</code> aparece más seguido.</li>
+          <li>Ejemplo: una recompensa con <code>weight 50</code> es mucho más común que una con <code>weight 5</code>.</li>
+        </ul>
+      </div>
+
+      <div class="command-extra">
+        <strong>Notas:</strong>
+        <ul>
+          <li>La crate debe existir.</li>
+          <li>No puedes crear dos recompensas con el mismo nombre dentro de la misma crate.</li>
+          <li>Crear la recompensa no entrega nada todavía; debes agregarle acciones con <code>addcrateaction</code>.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="command-card">
+      <h3>delcratereward</h3>
+      <p>Elimina una recompensa de una crate.</p>
+
+      <div class="command-code">
+        <span>Estructura</span>
+        <code>!delcratereward &lt;crateId&gt; &lt;rewardName&gt;</code>
+      </div>
+
+      <div class="command-code">
+        <span>Ejemplo</span>
+        <code>!delcratereward crate_rara monedas</code>
+      </div>
+
+      <div class="command-extra">
+        <strong>Notas:</strong>
+        <ul>
+          <li>La recompensa debe existir dentro de esa crate.</li>
+          <li>Al eliminar la recompensa, deja de poder salir al abrir la crate.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="command-card">
+      <h3>addcrateaction</h3>
+      <p>Añade una acción a una recompensa de crate. Las acciones se ejecutan cuando esa recompensa sale al abrir la crate.</p>
+
+      <div class="command-code">
+        <span>Estructura</span>
+        <code>!addcrateaction &lt;crateId&gt; &lt;rewardName&gt; &lt;tipo&gt; [valor] [cantidad]</code>
+      </div>
+
+      <div class="command-code">
+        <span>Ejemplo: dar dinero</span>
+        <code>!addcrateaction crate_rara monedas givemoney 1000</code>
+      </div>
+
+      <div class="command-code">
+        <span>Ejemplo: dar item</span>
+        <code>!addcrateaction crate_rara espada give_item espada 1</code>
+      </div>
+
+      <div class="command-code">
+        <span>Ejemplo: dar rol</span>
+        <code>!addcrateaction crate_rara vip giverol 123456789012345678</code>
+      </div>
+
+      <div class="command-code">
+        <span>Ejemplo: enviar mensaje</span>
+        <code>!addcrateaction crate_rara aviso sendmessage "Felicidades {user}, ganaste una recompensa."</code>
+      </div>
+
+      <div class="command-extra">
+        <strong>Tipos permitidos:</strong>
+        <ul>
+          <li><code>givemoney</code> — entrega monedas al usuario.</li>
+          <li><code>give_item</code> — entrega un item al usuario.</li>
+          <li><code>giverol</code> — entrega un rol al usuario.</li>
+          <li><code>sendmessage</code> — envía un mensaje configurado.</li>
+        </ul>
+      </div>
+
+      <div class="command-extra">
+        <strong>Formato por tipo:</strong>
+        <ul>
+          <li><code>givemoney</code>: <code>!addcrateaction &lt;crateId&gt; &lt;rewardName&gt; givemoney &lt;cantidad&gt;</code></li>
+          <li><code>give_item</code>: <code>!addcrateaction &lt;crateId&gt; &lt;rewardName&gt; give_item &lt;itemId&gt; &lt;cantidad&gt;</code></li>
+          <li><code>giverol</code>: <code>!addcrateaction &lt;crateId&gt; &lt;rewardName&gt; giverol &lt;roleId&gt;</code></li>
+          <li><code>sendmessage</code>: <code>!addcrateaction &lt;crateId&gt; &lt;rewardName&gt; sendmessage &lt;mensaje&gt;</code></li>
+        </ul>
+      </div>
+
+      <div class="command-extra">
+        <strong>Validaciones:</strong>
+        <ul>
+          <li>La crate debe existir.</li>
+          <li>La recompensa debe existir dentro de esa crate.</li>
+          <li><code>givemoney</code> requiere una cantidad entera mayor que <code>0</code>.</li>
+          <li><code>give_item</code> requiere itemId y cantidad entera mayor que <code>0</code>.</li>
+          <li><code>giverol</code> requiere un ID de rol.</li>
+          <li><code>sendmessage</code> requiere un mensaje no vacío.</li>
+        </ul>
+      </div>
+
+      <div class="command-extra">
+        <strong>Notas:</strong>
+        <ul>
+          <li>En <code>sendmessage</code>, puedes usar comillas si el mensaje tiene espacios.</li>
+          <li>Este archivo solo acepta <code>roleId</code> para <code>giverol</code>, no mención de rol.</li>
+          <li>Si quieres usar variables como <code>{user}</code>, dependen de cómo esté implementado el renderizado al usar la crate.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="command-card">
+      <h3>clearcrateactions</h3>
+      <p>Elimina todas las acciones configuradas para una recompensa de crate.</p>
+
+      <div class="command-code">
+        <span>Estructura</span>
+        <code>!clearcrateactions &lt;crateId&gt; &lt;rewardName&gt;</code>
+      </div>
+
+      <div class="command-code">
+        <span>Ejemplo</span>
+        <code>!clearcrateactions crate_rara monedas</code>
+      </div>
+
+      <div class="command-extra">
+        <strong>Notas:</strong>
+        <ul>
+          <li>La recompensa debe existir dentro de esa crate.</li>
+          <li>Elimina todas las acciones de esa recompensa.</li>
+          <li>No elimina la recompensa, solo sus acciones.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="command-card">
+      <h3>crateinfo</h3>
+      <p>Muestra la configuración completa de una crate, sus recompensas y acciones.</p>
+
+      <div class="command-code">
+        <span>Estructura</span>
+        <code>!crateinfo &lt;crateId&gt;</code>
+      </div>
+
+      <div class="command-code">
+        <span>Ejemplo</span>
+        <code>!crateinfo crate_rara</code>
+      </div>
+
+      <div class="command-extra">
+        <strong>Muestra:</strong>
+        <ul>
+          <li>ID de la crate.</li>
+          <li>Si tiene imagen configurada.</li>
+          <li>Lista de recompensas.</li>
+          <li>Weight de cada recompensa.</li>
+          <li>Acciones configuradas por recompensa.</li>
+          <li>Valor y cantidad de cada acción, si aplica.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="command-card">
+      <h3>setstaffrol</h3>
+      <p>Configura o desactiva el rol staff usado en mensajes relacionados con crates.</p>
+
+      <div class="command-code">
+        <span>Estructura: configurar</span>
+        <code>!setstaffrol @rol</code>
+      </div>
+
+      <div class="command-code">
+        <span>Estructura: desactivar</span>
+        <code>!setstaffrol off</code>
+      </div>
+
+      <div class="command-code">
+        <span>Ejemplo</span>
+        <code>!setstaffrol @Staff</code>
+      </div>
+
+      <div class="command-extra">
+        <strong>Notas:</strong>
+        <ul>
+          <li>Debes mencionar un rol válido para configurarlo.</li>
+          <li>Usa <code>off</code> para desactivar el rol staff de crates.</li>
+          <li>El valor se guarda en la configuración del servidor como <code>crate_staff_role_id</code>.</li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</div>
+
+      <div class="command-category" data-category="admin-missions">
+  <h2>📜 Admin: Misiones</h2>
+
+  <div class="command-list">
+    <article class="command-card">
+      <h3>addmission</h3>
+      <p>Crea una misión nueva con recompensa configurable.</p>
+
+      <div class="command-code">
+        <span>Estructura</span>
+        <code>!addmission &lt;id&gt; "titulo" "descripcion" &lt;missionType&gt; &lt;rewardType&gt; [rewardValue] [rewardAmount]</code>
+      </div>
+
+      <div class="command-code">
+        <span>Ejemplo: dinero</span>
+        <code>!addmission diaria "Misión diaria" "Completa tu misión diaria." daily givemoney - 500</code>
+      </div>
+
+      <div class="command-code">
+        <span>Ejemplo: item</span>
+        <code>!addmission espada "Misión de espada" "Reclama una espada especial." manual item espada 1</code>
+      </div>
+
+      <div class="command-code">
+        <span>Ejemplo: mensaje</span>
+        <code>!addmission aviso "Misión de aviso" "Recibe un mensaje especial." manual message "Felicidades {user}, completaste {mission}."</code>
+      </div>
+
+      <div class="command-extra">
+        <strong>missionType:</strong>
+        <ul>
+          <li><code>missionType</code> se guarda como texto en minúsculas.</li>
+          <li>No tiene una lista cerrada en este archivo, así que puedes usar tipos personalizados como <code>daily</code>, <code>manual</code>, <code>evento</code>, <code>semanal</code>, etc.</li>
+        </ul>
+      </div>
+
+      <div class="command-extra">
+        <strong>rewardType permitidos:</strong>
+        <ul>
+          <li><code>givemoney</code> — entrega monedas. Requiere <code>rewardAmount</code> mayor que 0.</li>
+          <li><code>item</code> — entrega un item. Requiere <code>rewardValue</code> como itemId y <code>rewardAmount</code> mayor que 0.</li>
+          <li><code>message</code> — envía un mensaje en el canal. Requiere <code>rewardValue</code> con el texto del mensaje.</li>
+        </ul>
+      </div>
+
+      <div class="command-extra">
+        <strong>Variables para rewardType message:</strong>
+        <ul>
+          <li><code>{user}</code> — menciona al usuario que completó la misión.</li>
+          <li><code>{username}</code> — nombre del usuario.</li>
+          <li><code>{mission}</code> — título de la misión.</li>
+          <li><code>{missionid}</code> — ID de la misión.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="command-card">
+      <h3>editmission</h3>
+      <p>Edita un campo específico de una misión existente.</p>
+
+      <div class="command-code">
+        <span>Estructura</span>
+        <code>!editmission &lt;id&gt; &lt;campo&gt; &lt;valor&gt;</code>
+      </div>
+
+      <div class="command-code">
+        <span>Ejemplo: título</span>
+        <code>!editmission diaria title "Nueva misión diaria"</code>
+      </div>
+
+      <div class="command-code">
+        <span>Ejemplo: recompensa</span>
+        <code>!editmission diaria reward_type givemoney</code>
+      </div>
+
+      <div class="command-code">
+        <span>Ejemplo: cantidad</span>
+        <code>!editmission diaria reward_amount 1000</code>
+      </div>
+
+      <div class="command-code">
+        <span>Ejemplo: activar/desactivar</span>
+        <code>!editmission diaria is_active off</code>
+      </div>
+
+      <div class="command-extra">
+        <strong>Campos editables:</strong>
+        <ul>
+          <li><code>title</code> — cambia el título de la misión.</li>
+          <li><code>description</code> — cambia la descripción.</li>
+          <li><code>mission_type</code> — cambia el tipo de misión. Se guarda en minúsculas.</li>
+          <li><code>reward_type</code> — cambia el tipo de recompensa. Solo acepta <code>givemoney</code>, <code>item</code> o <code>message</code>.</li>
+          <li><code>reward_value</code> — cambia el valor de la recompensa. Para <code>item</code> es el itemId; para <code>message</code> es el texto.</li>
+          <li><code>reward_amount</code> — cambia la cantidad. Debe ser un número entero mayor o igual que 0.</li>
+          <li><code>is_active</code> — activa o desactiva la misión.</li>
+        </ul>
+      </div>
+
+      <div class="command-extra">
+        <strong>Valores permitidos para is_active:</strong>
+        <ul>
+          <li><code>1</code>, <code>on</code>, <code>true</code> — activa la misión.</li>
+          <li><code>0</code>, <code>off</code>, <code>false</code> — desactiva la misión.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="command-card">
+      <h3>delmission</h3>
+      <p>Elimina una misión configurada.</p>
+
+      <div class="command-code">
+        <span>Estructura</span>
+        <code>!delmission &lt;id&gt;</code>
+      </div>
+
+      <div class="command-code">
+        <span>Ejemplo</span>
+        <code>!delmission diaria</code>
+      </div>
+    </article>
+
+    <article class="command-card">
+      <h3>listmissionsadmin</h3>
+      <p>Lista todas las misiones configuradas del servidor.</p>
+
+      <div class="command-code">
+        <span>Estructura</span>
+        <code>!listmissionsadmin</code>
+      </div>
+
+      <div class="command-code">
+        <span>Ejemplo</span>
+        <code>!listmissionsadmin</code>
+      </div>
+
+      <div class="command-extra">
+        <strong>Muestra:</strong>
+        <ul>
+          <li>Título de la misión.</li>
+          <li>ID.</li>
+          <li>Tipo de misión.</li>
+          <li>Tipo de recompensa.</li>
+          <li>Estado: activa o inactiva.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="command-card">
+      <h3>missioninfo</h3>
+      <p>Muestra la configuración completa de una misión.</p>
+
+      <div class="command-code">
+        <span>Estructura</span>
+        <code>!missioninfo &lt;id&gt;</code>
+      </div>
+
+      <div class="command-code">
+        <span>Ejemplo</span>
+        <code>!missioninfo diaria</code>
+      </div>
+
+      <div class="command-extra">
+        <strong>Muestra:</strong>
+        <ul>
+          <li>ID de la misión.</li>
+          <li>Tipo de misión.</li>
+          <li>Estado activo/inactivo.</li>
+          <li>Reward type.</li>
+          <li>Reward value.</li>
+          <li>Reward amount.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="command-card">
+      <h3>missioncompleta / mc</h3>
+      <p>Completa una misión para un usuario y entrega la recompensa configurada.</p>
+
+      <div class="command-code">
+        <span>Estructura</span>
+        <code>!missioncompleta @usuario &lt;missionId&gt;</code>
+      </div>
+
+      <div class="command-code">
+        <span>Ejemplo</span>
+        <code>!missioncompleta @Neko diaria</code>
+      </div>
+
+      <div class="command-code">
+        <span>Alias</span>
+        <code>!mc @Neko diaria</code>
+      </div>
+
+      <div class="command-extra">
+        <strong>Qué hace al completar:</strong>
+        <ul>
+          <li>Marca la misión como completada para el usuario.</li>
+          <li>Entrega la recompensa según <code>reward_type</code>.</li>
+          <li>Actualiza el panel de misiones si existe.</li>
+        </ul>
+      </div>
+
+      <div class="command-extra">
+        <strong>Recompensas soportadas:</strong>
+        <ul>
+          <li><code>givemoney</code> — añade monedas al usuario.</li>
+          <li><code>item</code> — añade items al inventario del usuario.</li>
+          <li><code>message</code> — envía un mensaje configurado al canal.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="command-card">
+      <h3>resetmissions</h3>
+      <p>Reinicia el progreso de misiones de todos los usuarios del servidor.</p>
+
+      <div class="command-code">
+        <span>Estructura</span>
+        <code>!resetmissions confirm</code>
+      </div>
+
+      <div class="command-code">
+        <span>Ejemplo</span>
+        <code>!resetmissions confirm</code>
+      </div>
+
+      <div class="command-extra">
+        <strong>Importante:</strong>
+        <ul>
+          <li>No borra las misiones creadas.</li>
+          <li>Reinicia el progreso de usuarios.</li>
+          <li>Limpia los registros de paneles de misiones.</li>
+          <li>Los mensajes viejos quedan como historial y dejan de actualizarse.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="command-card">
+      <h3>setmissionchannel</h3>
+      <p>Configura o desactiva el canal usado para paneles de misiones.</p>
+
+      <div class="command-code">
+        <span>Estructura</span>
+        <code>!setmissionchannel #canal</code>
+      </div>
+
+      <div class="command-code">
+        <span>Desactivar</span>
+        <code>!setmissionchannel off</code>
+      </div>
+
+      <div class="command-code">
+        <span>Ejemplo</span>
+        <code>!setmissionchannel #misiones</code>
+      </div>
+
+      <div class="command-extra">
+        <strong>Canales válidos:</strong>
+        <ul>
+          <li>Canales de texto normales.</li>
+          <li>Canales de anuncios.</li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</div>
+
+      <div class="command-category" data-category="admin-perms">
+        <h2>🛡️ Admin: Permisos</h2>
+
+        <div class="command-list">
+          <article class="command-card">
+            <h3>setbotchannel</h3>
+            <p>Permite usar el bot solo en ese canal.</p>
+            <div class="command-code">
+              <span>Estructura</span>
+              <code>!setbotchannel #canal</code>
+            </div>
+            <div class="command-code">
+              <span>Ejemplo</span>
+              <code>!setbotchannel #bot</code>
+            </div>
+          </article>
+
+          <article class="command-card">
+            <h3>delbotchannel</h3>
+            <p>Quita un canal permitido.</p>
+            <div class="command-code">
+              <span>Estructura</span>
+              <code>!delbotchannel #canal</code>
+            </div>
+            <div class="command-code">
+              <span>Ejemplo</span>
+              <code>!delbotchannel #bot</code>
+            </div>
+          </article>
+
+          <article class="command-card">
+            <h3>resetchannels</h3>
+            <p>Elimina restricción de canales.</p>
+            <div class="command-code">
+              <span>Estructura</span>
+              <code>!resetchannels</code>
+            </div>
+            <div class="command-code">
+              <span>Ejemplo</span>
+              <code>!resetchannels</code>
+            </div>
+          </article>
+
+          <article class="command-card">
+            <h3>setbotrole</h3>
+            <p>Permite usar el bot solo a ese rol.</p>
+            <div class="command-code">
+              <span>Estructura</span>
+              <code>!setbotrole @rol</code>
+            </div>
+            <div class="command-code">
+              <span>Ejemplo</span>
+              <code>!setbotrole @Miembro</code>
+            </div>
+          </article>
+
+          <article class="command-card">
+            <h3>delbotrole</h3>
+            <p>Quita un rol permitido.</p>
+            <div class="command-code">
+              <span>Estructura</span>
+              <code>!delbotrole @rol</code>
+            </div>
+            <div class="command-code">
+              <span>Ejemplo</span>
+              <code>!delbotrole @Miembro</code>
+            </div>
+          </article>
+
+          <article class="command-card">
+            <h3>resetroles</h3>
+            <p>Elimina restricción de roles.</p>
+            <div class="command-code">
+              <span>Estructura</span>
+              <code>!resetroles</code>
+            </div>
+            <div class="command-code">
+              <span>Ejemplo</span>
+              <code>!resetroles</code>
+            </div>
+          </article>
+
+          <article class="command-card">
+            <h3>botperms</h3>
+            <p>Muestra configuración actual de canales, roles y cooldowns.</p>
+            <div class="command-code">
+              <span>Estructura</span>
+              <code>!botperms</code>
+            </div>
+            <div class="command-code">
+              <span>Ejemplo</span>
+              <code>!botperms</code>
+            </div>
+          </article>
+
+          <article class="command-card">
+            <h3>disable</h3>
+            <p>Desactiva un comando globalmente o solo en un canal.</p>
+            <div class="command-code">
+              <span>Estructura</span>
+              <code>!disable &lt;comando&gt; [#canal]</code>
+            </div>
+            <div class="command-code">
+              <span>Ejemplo</span>
+              <code>!disable slots #casino</code>
+            </div>
+          </article>
+
+          <article class="command-card">
+            <h3>enable</h3>
+            <p>Reactiva un comando globalmente o en un canal específico.</p>
+            <div class="command-code">
+              <span>Estructura</span>
+              <code>!enable &lt;comando&gt; [#canal]</code>
+            </div>
+            <div class="command-code">
+              <span>Ejemplo</span>
+              <code>!enable slots #casino</code>
+            </div>
+          </article>
+
+          <article class="command-card">
+            <h3>disabledlist</h3>
+            <p>Lista comandos desactivados globalmente y por canal.</p>
+            <div class="command-code">
+              <span>Estructura</span>
+              <code>!disabledlist</code>
+            </div>
+            <div class="command-code">
+              <span>Ejemplo</span>
+              <code>!disabledlist</code>
+            </div>
+          </article>
+
+          <article class="command-card">
+            <h3>addcooldown</h3>
+            <p>Agrega cooldown global o por canal a un comando.</p>
+            <div class="command-code">
+              <span>Estructura</span>
+              <code>!addcooldown &lt;comando&gt; &lt;tiempo&gt; [#canal]</code>
+            </div>
+            <div class="command-code">
+              <span>Ejemplo</span>
+              <code>!addcooldown slots 1m #casino</code>
+            </div>
+          </article>
+
+          <article class="command-card">
+            <h3>delcooldown</h3>
+            <p>Elimina el cooldown global o específico de canal de un comando.</p>
+            <div class="command-code">
+              <span>Estructura</span>
+              <code>!delcooldown &lt;comando&gt; [#canal]</code>
+            </div>
+            <div class="command-code">
+              <span>Ejemplo</span>
+              <code>!delcooldown slots #casino</code>
+            </div>
+          </article>
+
+          <article class="command-card">
+            <h3>cooldownlist</h3>
+            <p>Lista los cooldowns configurados para comandos.</p>
+            <div class="command-code">
+              <span>Estructura</span>
+              <code>!cooldownlist</code>
+            </div>
+            <div class="command-code">
+              <span>Ejemplo</span>
+              <code>!cooldownlist</code>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="command-category" data-category="admin-settings">
+        <h2>⚙️ Admin: Config</h2>
+
+        <div class="command-list">
+         <article class="command-card">
+  <h3>setcurrency</h3>
+  <p>Cambia el nombre y emoji de la moneda del servidor.</p>
+
+  <div class="command-code">
+    <span>Estructura</span>
+    <code>!setcurrency &lt;nombre&gt; &lt;emoji&gt;</code>
+  </div>
+
+  <div class="command-code">
+    <span>Ejemplo</span>
+    <code>!setcurrency coins 🪙</code>
+  </div>
+
+  <div class="command-extra">
+    <strong>Validaciones:</strong>
+    <ul>
+      <li>El nombre de la moneda no puede superar <code>32</code> caracteres.</li>
+      <li>El emoji debe ser válido para el bot.</li>
+      <li>El cambio se usa en balances, apuestas, compras y recompensas.</li>
+    </ul>
+  </div>
+</article>
+
+<article class="command-card">
+  <h3>setshopimage</h3>
+  <p>Configura o quita la imagen principal de la tienda.</p>
+
+  <div class="command-code">
+    <span>Estructura: configurar</span>
+    <code>!setshopimage &lt;url&gt;</code>
+  </div>
+
+  <div class="command-code">
+    <span>Estructura: desactivar</span>
+    <code>!setshopimage off</code>
+  </div>
+
+  <div class="command-code">
+    <span>Ejemplo</span>
+    <code>!setshopimage https://example.com/shop.png</code>
+  </div>
+
+  <div class="command-extra">
+    <strong>Validaciones:</strong>
+    <ul>
+      <li>La URL debe empezar por <code>http://</code> o <code>https://</code>.</li>
+      <li><code>off</code> desactiva la imagen de tienda.</li>
+    </ul>
+  </div>
+</article>
+
+<article class="command-card">
+  <h3>setlog</h3>
+  <p>Configura o desactiva el canal de logs del servidor.</p>
+
+  <div class="command-code">
+    <span>Estructura: configurar</span>
+    <code>!setlog #canal</code>
+  </div>
+
+  <div class="command-code">
+    <span>Estructura: desactivar</span>
+    <code>!setlog off</code>
+  </div>
+
+  <div class="command-code">
+    <span>Ejemplo</span>
+    <code>!setlog #logs</code>
+  </div>
+
+  <div class="command-extra">
+    <strong>Canales válidos:</strong>
+    <ul>
+      <li>Canales de texto normales.</li>
+      <li>Canales de anuncios.</li>
+    </ul>
+  </div>
+
+  <div class="command-extra">
+    <strong>Uso:</strong>
+    <ul>
+      <li>El canal de logs recibe registros de compras, cambios administrativos, crates, economía y otras acciones importantes.</li>
+    </ul>
+  </div>
+</article>
+
+<article class="command-card">
+  <h3>setrealshop</h3>
+  <p>Configura o desactiva el botón de tienda real que aparece en la tienda.</p>
+
+  <div class="command-code">
+    <span>Estructura: configurar</span>
+    <code>!setrealshop &lt;url&gt;</code>
+  </div>
+
+  <div class="command-code">
+    <span>Estructura: desactivar</span>
+    <code>!setrealshop off</code>
+  </div>
+
+  <div class="command-code">
+    <span>Ejemplo</span>
+    <code>!setrealshop https://example.com/store</code>
+  </div>
+
+  <div class="command-extra">
+    <strong>Validaciones:</strong>
+    <ul>
+      <li>La URL debe empezar por <code>http://</code> o <code>https://</code>.</li>
+      <li><code>off</code> desactiva la tienda real.</li>
+      <li>Cuando está desactivada, el botón de tienda real queda deshabilitado.</li>
+    </ul>
+  </div>
+</article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Rumic Economy Bot. Proyecto para Discord.</p>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>
