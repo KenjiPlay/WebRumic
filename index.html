@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rumic Economy Bot</title>
+  <meta
+    name="description"
+    content="Bot de economía fácilmente personalizable para servidores de Discord."
+  />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a href="#inicio" class="brand">
+        <span class="brand-icon">🪙</span>
+        <span>Rumic Economy Bot</span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+        ☰
+      </button>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#caracteristicas">Características</a>
+        <a href="#sistemas">Sistemas</a>
+        <a href="./commands.html">Comandos</a>
+        <a href="#faq">FAQ</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">Economía • Minijuegos • Personalización</p>
+
+        <h1>
+          Rumic Economy Bot
+          <span>para servidores de Discord</span>
+        </h1>
+
+        <p class="hero-description">
+          Bot de economía fácilmente personalizable. Adáptalo a los gustos o
+          necesidades de tu servidor de Discord con tienda, juegos, recompensas,
+          crates, misiones y sistemas administrativos.
+        </p>
+
+        <div class="hero-actions">
+          <button class="button button-primary" disabled>
+            Invitación próximamente
+          </button>
+          <button class="button button-secondary" disabled>
+            Contacto próximamente
+          </button>
+        </div>
+
+        <div class="hero-stats">
+          <div>
+            <strong>Economía</strong>
+            <span>Wallet, banco, tienda e inventario</span>
+          </div>
+          <div>
+            <strong>Minijuegos</strong>
+            <span>Slots, Blackjack, Wordle, subastas y más</span>
+          </div>
+          <div>
+            <strong>Admin</strong>
+            <span>Permisos, cooldowns, logs y configuración</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="bot-preview">
+          <div class="bot-avatar">🪙</div>
+          <div>
+            <h2>Rumic</h2>
+            <p>Economy System Online</p>
+          </div>
+        </div>
+
+        <div class="terminal">
+          <div class="terminal-line">
+            <span class="prompt">!</span>shop
+          </div>
+          <div class="terminal-output">Abre la tienda del servidor.</div>
+
+          <div class="terminal-line">
+            <span class="prompt">!</span>slots 100
+          </div>
+          <div class="terminal-output">Apuesta monedas en la tragamonedas.</div>
+
+          <div class="terminal-line">
+            <span class="prompt">!</span>wordle animales
+          </div>
+          <div class="terminal-output">Inicia un Wordle personalizado.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="caracteristicas" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Características</p>
+        <h2>Diseñado para comunidades con economía activa</h2>
+        <p>
+          Rumic combina sistemas de economía, tienda, recompensas y juegos para
+          mantener tu servidor activo y personalizable.
+        </p>
+      </div>
+
+      <div class="grid cards-3">
+        <article class="card">
+          <div class="card-icon">💰</div>
+          <h3>Economía completa</h3>
+          <p>
+            Wallet, banco, pagos entre usuarios, recompensas diarias, trabajo y
+            leaderboard para competir por el top del servidor.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">🛒</div>
+          <h3>Tienda configurable</h3>
+          <p>
+            Crea items, categorías, precios, requisitos y acciones al usar objetos.
+            Ideal para roles, recompensas y contenido exclusivo.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">🎮</div>
+          <h3>Minijuegos</h3>
+          <p>
+            Slots, Blackjack, dados, Death Dice, robos, subastas, lotería y Wordle
+            personalizable por categorías.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">📦</div>
+          <h3>Crates</h3>
+          <p>
+            Cajas con recompensas ponderadas, acciones configurables y soporte para
+            dinero, roles, items y mensajes personalizados.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">📜</div>
+          <h3>Misiones</h3>
+          <p>
+            Sistema de misiones con recompensas para crear objetivos dentro del
+            servidor y premiar la participación.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">🛡️</div>
+          <h3>Control administrativo</h3>
+          <p>
+            Configura canales permitidos, roles, comandos desactivados, cooldowns,
+            logs y límites globales de apuestas.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="sistemas" class="section section-alt">
+      <div class="section-heading">
+        <p class="eyebrow">Sistemas</p>
+        <h2>Todo lo necesario para personalizar tu economía</h2>
+      </div>
+
+      <div class="feature-list">
+        <div class="feature-row">
+          <span>01</span>
+          <div>
+            <h3>Tienda por categorías</h3>
+            <p>
+              Organiza tus items por categorías, añade emojis, descripciones,
+              precios y requisitos especiales.
+            </p>
+          </div>
+        </div>
+
+        <div class="feature-row">
+          <span>02</span>
+          <div>
+            <h3>Wordle personalizado</h3>
+            <p>
+              Agrega palabras por categoría, pistas ocultas y premio opcional al
+              completar la partida.
+            </p>
+          </div>
+        </div>
+
+        <div class="feature-row">
+          <span>03</span>
+          <div>
+            <h3>Subastas y loterías</h3>
+            <p>
+              Permite que los usuarios subasten items o participen en sorteos con
+              tickets y premios configurables.
+            </p>
+          </div>
+        </div>
+
+        <div class="feature-row">
+          <span>04</span>
+          <div>
+            <h3>Permisos y seguridad</h3>
+            <p>
+              Limita el uso del bot por canal, rol, comando o cooldown. También
+              puedes autorizar servidores desde el archivo de configuración.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="comandos" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Comandos</p>
+        <h2>Comandos principales</h2>
+        <p>
+          Una vista rápida de algunos comandos disponibles. Puedes ampliar esta
+          sección con todos los comandos del bot más adelante.
+        </p>
+      </div>
+
+      <div class="commands">
+        <div class="command-group">
+          <h3>Economía</h3>
+          <ul>
+            <li><code>!balance</code> Ver tu dinero.</li>
+            <li><code>!daily</code> Reclamar recompensa diaria.</li>
+            <li><code>!work</code> Trabajar para ganar monedas.</li>
+            <li><code>!pay @usuario cantidad</code> Enviar dinero.</li>
+          </ul>
+        </div>
+
+        <div class="command-group">
+          <h3>Tienda</h3>
+          <ul>
+            <li><code>!shop</code> Abrir la tienda.</li>
+            <li><code>!buy item</code> Comprar un item.</li>
+            <li><code>!use item</code> Usar un item.</li>
+            <li><code>!inventory</code> Ver inventario.</li>
+          </ul>
+        </div>
+
+        <div class="command-group">
+          <h3>Juegos</h3>
+          <ul>
+            <li><code>!slots cantidad</code> Jugar slots.</li>
+            <li><code>!blackjack apuesta</code> Jugar Blackjack.</li>
+            <li><code>!rob @usuario</code> Intentar robar wallet.</li>
+            <li><code>!wordle categoría</code> Iniciar Wordle.</li>
+          </ul>
+        </div>
+
+        <div class="command-group">
+          <h3>Admin</h3>
+          <ul>
+            <li><code>!setcurrency nombre emoji</code> Cambiar moneda.</li>
+            <li><code>!addshopitem</code> Crear item.</li>
+            <li><code>!disable comando</code> Desactivar comando.</li>
+            <li><code>!addcooldown comando tiempo</code> Añadir cooldown.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section section-alt">
+      <div class="section-heading">
+        <p class="eyebrow">FAQ</p>
+        <h2>Preguntas rápidas</h2>
+      </div>
+
+      <div class="faq">
+        <details>
+          <summary>¿Rumic Economy Bot es personalizable?</summary>
+          <p>
+            Sí. Puedes configurar moneda, tienda, items, recompensas, roles,
+            comandos, cooldowns, crates, misiones y más.
+          </p>
+        </details>
+
+        <details>
+          <summary>¿Puedo usarlo en cualquier servidor?</summary>
+          <p>
+            Por ahora el bot puede estar limitado a servidores autorizados por su
+            creador.
+          </p>
+        </details>
+
+        <details>
+          <summary>¿Tiene página de invitación?</summary>
+          <p>
+            Todavía no. La invitación pública se añadirá cuando esté disponible.
+          </p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Rumic Economy Bot. Proyecto para Discord.</p>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>
