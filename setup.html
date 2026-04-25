@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Primeros pasos | Rumic Economy Bot</title>
+  <meta
+    name="description"
+    content="Guía de primeros pasos para configurar Rumic Economy Bot en tu servidor de Discord."
+  />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a href="./index.html" class="brand">
+        <span class="brand-icon">🪙</span>
+        <span>Rumic Economy Bot</span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+        ☰
+      </button>
+
+      <div class="nav-links" id="navLinks">
+        <a href="./index.html#caracteristicas">Características</a>
+        <a href="./index.html#sistemas">Sistemas</a>
+        <a href="./setup.html">Primeros pasos</a>
+        <a href="./commands.html">Comandos</a>
+        <a href="./index.html#faq">FAQ</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="commands-hero">
+      <p class="eyebrow">Guía inicial</p>
+      <h1>
+        Primeros pasos con
+        <span>Rumic Economy Bot</span>
+      </h1>
+      <p>
+        Esta guía te ayuda a configurar lo básico del bot en un servidor nuevo:
+        moneda, logs, tienda, crates, misiones, juegos y permisos.
+      </p>
+    </section>
+
+    <section class="commands-page">
+      <div class="setup-grid">
+        <article class="setup-step">
+          <span class="setup-number">01</span>
+          <h2>Revisa el prefijo</h2>
+          <p>
+            Antes de configurar nada, revisa qué prefijo está usando el bot en
+            tu servidor.
+          </p>
+
+          <div class="command-code">
+            <span>Comando</span>
+            <code>!prefix</code>
+          </div>
+
+          <div class="command-code">
+            <span>Cambiar prefijo</span>
+            <code>!setprefix ?</code>
+          </div>
+
+          <div class="command-extra">
+            <strong>Nota:</strong>
+            <ul>
+              <li>Si cambias el prefijo a <code>?</code>, después usarás comandos como <code>?shop</code> o <code>?help</code>.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="setup-step">
+          <span class="setup-number">02</span>
+          <h2>Configura la moneda</h2>
+          <p>
+            Personaliza el nombre y emoji de la moneda para adaptarla al estilo
+            de tu servidor.
+          </p>
+
+          <div class="command-code">
+            <span>Estructura</span>
+            <code>!setcurrency &lt;nombre&gt; &lt;emoji&gt;</code>
+          </div>
+
+          <div class="command-code">
+            <span>Ejemplo</span>
+            <code>!setcurrency coins 🪙</code>
+          </div>
+        </article>
+
+        <article class="setup-step">
+          <span class="setup-number">03</span>
+          <h2>Configura el canal de logs</h2>
+          <p>
+            Los logs ayudan a revisar compras, cambios administrativos, crates,
+            economía y acciones importantes.
+          </p>
+
+          <div class="command-code">
+            <span>Configurar</span>
+            <code>!setlog #logs</code>
+          </div>
+
+          <div class="command-code">
+            <span>Desactivar</span>
+            <code>!setlog off</code>
+          </div>
+        </article>
+
+        <article class="setup-step">
+          <span class="setup-number">04</span>
+          <h2>Crea items básicos de tienda</h2>
+          <p>
+            Empieza con algunos items simples para que los usuarios puedan
+            comprar, usar o guardar en inventario.
+          </p>
+
+          <div class="command-code">
+            <span>Crate de ejemplo</span>
+            <code>!addshopitem crate_madera 80 crates 📦 "Crate de Madera" "Ábrela para obtener recompensas aleatorias."</code>
+          </div>
+
+          <div class="command-code">
+            <span>Item de ejemplo</span>
+            <code>!addshopitem espada 500 armas ⚔️ "Espada" "Una espada básica para tu inventario."</code>
+          </div>
+
+          <div class="command-extra">
+            <strong>Después de crear items:</strong>
+            <ul>
+              <li>Los usuarios pueden verlos con <code>!shop</code>.</li>
+              <li>Los usuarios pueden comprarlos con <code>!buy itemId</code>.</li>
+              <li>Los usuarios pueden usarlos con <code>!use itemId</code> si tienen acciones configuradas.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="setup-step">
+          <span class="setup-number">05</span>
+          <h2>Configura una crate básica</h2>
+          <p>
+            Las crates funcionan con recompensas ponderadas. Primero creas la
+            crate, luego recompensas, y después acciones para cada recompensa.
+          </p>
+
+          <div class="command-code">
+            <span>Crear crate</span>
+            <code>!addcrate crate_madera Crate de Madera</code>
+          </div>
+
+          <div class="command-code">
+            <span>Agregar recompensa</span>
+            <code>!addcratereward crate_madera monedas 80</code>
+          </div>
+
+          <div class="command-code">
+            <span>Agregar acción</span>
+            <code>!addcrateaction crate_madera monedas givemoney 100</code>
+          </div>
+
+          <div class="command-code">
+            <span>Revisar crate</span>
+            <code>!crateinfo crate_madera</code>
+          </div>
+        </article>
+
+        <article class="setup-step">
+          <span class="setup-number">06</span>
+          <h2>Configura una misión simple</h2>
+          <p>
+            Crea misiones para premiar participación, eventos o tareas manuales.
+          </p>
+
+          <div class="command-code">
+            <span>Misión con dinero</span>
+            <code>!addmission diaria "Misión diaria" "Completa tu misión diaria." daily givemoney - 500</code>
+          </div>
+
+          <div class="command-code">
+            <span>Completar misión</span>
+            <code>!mc @usuario diaria</code>
+          </div>
+
+          <div class="command-code">
+            <span>Ver misiones</span>
+            <code>!misiones</code>
+          </div>
+        </article>
+
+        <article class="setup-step">
+          <span class="setup-number">07</span>
+          <h2>Configura juegos y apuestas</h2>
+          <p>
+            Ajusta límites de apuesta y opciones de juegos para evitar apuestas
+            demasiado bajas o demasiado altas.
+          </p>
+
+          <div class="command-code">
+            <span>Límites de apuesta</span>
+            <code>!setbetlimits 10 100000</code>
+          </div>
+
+          <div class="command-code">
+            <span>Blackjack</span>
+            <code>!setblackjackdecks 6</code>
+          </div>
+
+          <div class="command-code">
+            <span>Cooldown de rob</span>
+            <code>!setrobcooldown 1h</code>
+          </div>
+
+          <div class="command-code">
+            <span>Premio de Wordle</span>
+            <code>!setwordleprize 500</code>
+          </div>
+        </article>
+
+        <article class="setup-step">
+          <span class="setup-number">08</span>
+          <h2>Configura símbolos de slots</h2>
+          <p>
+            Para que slots tenga variedad, agrega símbolos con rareza,
+            multiplicador, peso y máximo por columna.
+          </p>
+
+          <div class="command-code">
+            <span>Símbolo común</span>
+            <code>!addslot 🍒 comun 2 20 2</code>
+          </div>
+
+          <div class="command-code">
+            <span>Símbolo raro</span>
+            <code>!addslot 💎 raro 10 2 1</code>
+          </div>
+
+          <div class="command-code">
+            <span>Ver símbolos</span>
+            <code>!listslots</code>
+          </div>
+        </article>
+
+        <article class="setup-step">
+          <span class="setup-number">09</span>
+          <h2>Configura permisos y canales</h2>
+          <p>
+            Puedes limitar dónde se usa el bot, qué roles pueden usarlo, o poner
+            cooldowns a comandos concretos.
+          </p>
+
+          <div class="command-code">
+            <span>Canal permitido</span>
+            <code>!setbotchannel #bot</code>
+          </div>
+
+          <div class="command-code">
+            <span>Rol permitido</span>
+            <code>!setbotrole @Miembro</code>
+          </div>
+
+          <div class="command-code">
+            <span>Cooldown de comando</span>
+            <code>!addcooldown slots 1m #casino</code>
+          </div>
+
+          <div class="command-code">
+            <span>Ver configuración</span>
+            <code>!botperms</code>
+          </div>
+        </article>
+
+        <article class="setup-step">
+          <span class="setup-number">10</span>
+          <h2>Prueba que todo funciona</h2>
+          <p>
+            Usa comandos normales desde una cuenta sin permisos de administrador
+            para comprobar que economía, tienda, juegos y permisos funcionan.
+          </p>
+
+          <div class="command-code">
+            <span>Comandos de prueba</span>
+            <code>!shop</code>
+          </div>
+
+          <div class="command-code">
+            <span>Comandos de prueba</span>
+            <code>!daily</code>
+          </div>
+
+          <div class="command-code">
+            <span>Comandos de prueba</span>
+            <code>!slots 100</code>
+          </div>
+
+          <div class="command-code">
+            <span>Comandos de prueba</span>
+            <code>!help</code>
+          </div>
+        </article>
+      </div>
+
+      <div class="section-actions">
+        <a class="button button-secondary button-link" href="./index.html">
+          Volver al inicio
+        </a>
+        <a class="button button-primary button-link" href="./commands.html">
+          Ver comandos completos
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Rumic Economy Bot. Proyecto para Discord.</p>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>
