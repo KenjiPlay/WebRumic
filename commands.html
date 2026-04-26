@@ -731,6 +731,98 @@
 
   <div class="command-list">
     <article class="command-card">
+  <h3>addshopitem</h3>
+  <p>Crea un item nuevo en la tienda del servidor.</p>
+
+  <div class="command-code">
+    <span>Estructura</span>
+    <code>!addshopitem &lt;id&gt; &lt;precio&gt; &lt;categoria&gt; &lt;emoji|-&gt; "nombre" "descripcion"</code>
+  </div>
+
+  <div class="command-code">
+    <span>Ejemplo</span>
+    <code>!addshopitem espada 500 armas ⚔️ "Espada básica" "Una espada simple para principiantes."</code>
+  </div>
+
+  <div class="command-code">
+    <span>Ejemplo sin emoji</span>
+    <code>!addshopitem ticket 100 tickets - "Ticket común" "Un ticket para eventos."</code>
+  </div>
+
+  <div class="command-extra">
+    <strong>Validaciones:</strong>
+    <ul>
+      <li><code>id</code> solo acepta letras, números, guiones y guiones bajos. Máximo <code>40</code> caracteres.</li>
+      <li><code>precio</code> debe estar entre <code>1</code> y <code>1.000.000.000</code>.</li>
+      <li><code>categoria</code> no puede superar <code>32</code> caracteres.</li>
+      <li><code>nombre</code> no puede superar <code>80</code> caracteres.</li>
+      <li><code>descripcion</code> no puede superar <code>500</code> caracteres.</li>
+      <li>Usa <code>-</code> en emoji si quieres crear el item sin emoji.</li>
+    </ul>
+  </div>
+</article>
+
+<article class="command-card">
+  <h3>delshopitem</h3>
+  <p>Elimina un item de la tienda junto con sus datos asociados.</p>
+
+  <div class="command-code">
+    <span>Estructura</span>
+    <code>!delshopitem &lt;id&gt;</code>
+  </div>
+
+  <div class="command-code">
+    <span>Ejemplo</span>
+    <code>!delshopitem espada</code>
+  </div>
+
+  <div class="command-extra">
+    <strong>También elimina:</strong>
+    <ul>
+      <li>El item de los inventarios de usuarios.</li>
+      <li>Los requisitos del item.</li>
+      <li>Las acciones configuradas del item.</li>
+      <li>El registro del item en la tienda.</li>
+    </ul>
+  </div>
+</article>
+
+<article class="command-card">
+  <h3>editshopitem</h3>
+  <p>Edita un campo específico de un item existente.</p>
+
+  <div class="command-code">
+    <span>Estructura</span>
+    <code>!editshopitem &lt;id&gt; &lt;campo&gt; &lt;valor&gt;</code>
+  </div>
+
+  <div class="command-code">
+    <span>Ejemplo: precio</span>
+    <code>!editshopitem espada price 750</code>
+  </div>
+
+  <div class="command-code">
+    <span>Ejemplo: nombre</span>
+    <code>!editshopitem espada name "Espada legendaria"</code>
+  </div>
+
+  <div class="command-code">
+    <span>Ejemplo: quitar emoji</span>
+    <code>!editshopitem espada emoji off</code>
+  </div>
+
+  <div class="command-extra">
+    <strong>Campos editables:</strong>
+    <ul>
+      <li><code>name</code> — cambia el nombre. Máximo <code>80</code> caracteres.</li>
+      <li><code>price</code> — cambia el precio. Entre <code>1</code> y <code>1.000.000.000</code>.</li>
+      <li><code>category</code> — cambia la categoría. Máximo <code>32</code> caracteres.</li>
+      <li><code>emoji</code> — cambia el emoji. Usa <code>-</code>, <code>off</code> o <code>none</code> para quitarlo.</li>
+      <li><code>description</code> — cambia la descripción. Máximo <code>500</code> caracteres.</li>
+    </ul>
+  </div>
+</article>
+    <article class="command-card">
       <h3>addreq</h3>
       <p>Agrega un requisito a un item de la tienda. El usuario deberá cumplir ese requisito para poder comprar el item.</p>
 
