@@ -280,6 +280,69 @@
               <code>!bj 250</code>
             </div>
           </article>
+          <article class="command-card">
+  <h3>ruleta / roulette / r</h3>
+  <p>Juega una ruleta simple apostando a color, paridad o número exacto.</p>
+
+  <div class="command-code">
+    <span>Estructura</span>
+    <code>!r &lt;apuesta&gt; &lt;rojo|negro|par|impar|0-36&gt;</code>
+  </div>
+
+  <div class="command-code">
+    <span>Ejemplo: rojo</span>
+    <code>!r 100 rojo</code>
+  </div>
+
+  <div class="command-code">
+    <span>Ejemplo: negro</span>
+    <code>!r 100 negro</code>
+  </div>
+
+  <div class="command-code">
+    <span>Ejemplo: par</span>
+    <code>!r 100 par</code>
+  </div>
+
+  <div class="command-code">
+    <span>Ejemplo: impar</span>
+    <code>!r 100 impar</code>
+  </div>
+
+  <div class="command-code">
+    <span>Ejemplo: número exacto</span>
+    <code>!r 100 17</code>
+  </div>
+
+  <div class="command-extra">
+    <strong>Opciones disponibles:</strong>
+    <ul>
+      <li><code>rojo</code> o <code>red</code> — apuesta a que sale rojo.</li>
+      <li><code>negro</code> o <code>black</code> — apuesta a que sale negro.</li>
+      <li><code>par</code> o <code>even</code> — apuesta a número par.</li>
+      <li><code>impar</code> o <code>odd</code> — apuesta a número impar.</li>
+      <li><code>0-36</code> — apuesta a un número exacto.</li>
+    </ul>
+  </div>
+
+  <div class="command-extra">
+    <strong>Pagos:</strong>
+    <ul>
+      <li><code>rojo</code>, <code>negro</code>, <code>par</code> e <code>impar</code> pagan <code>x2</code>.</li>
+      <li>Número exacto paga <code>x36</code>.</li>
+    </ul>
+  </div>
+
+  <div class="command-extra">
+    <strong>Reglas:</strong>
+    <ul>
+      <li>La ruleta tira un número entre <code>0</code> y <code>36</code>.</li>
+      <li>El <code>0</code> es verde.</li>
+      <li>Si sale <code>0</code>, las apuestas a rojo, negro, par e impar pierden.</li>
+      <li>Para ganar con número exacto, debe salir exactamente el número elegido.</li>
+    </ul>
+  </div>
+</article>
 
           <article class="command-card">
             <h3>rob / robar</h3>
