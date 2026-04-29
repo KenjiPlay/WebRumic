@@ -60,12 +60,14 @@
           <option value="shop">Tienda</option>
           <option value="games">Juegos</option>
           <option value="missions">Misiones</option>
+          <option value="memes">Memes</option>
           <option value="config">Config</option>
           <option value="admin-shop">Admin: Tienda</option>
           <option value="admin-economy">Admin: Economía</option>
           <option value="admin-games">Admin: Juegos</option>
           <option value="admin-crates">Admin: Crates</option>
           <option value="admin-missions">Admin: Misiones</option>
+          <option value="admin-memes">Admin: Memes</option>
           <option value="admin-perms">Admin: Permisos</option>
           <option value="admin-settings">Admin: Config</option>
         </select>
@@ -732,6 +734,42 @@
           <li><code>!misiones</code> muestra una vista resumida.</li>
           <li><code>!misionlist</code> muestra una vista más completa con descripciones.</li>
         </ul>
+      </div>
+    </article>
+  </div>
+</div>
+
+<div class="command-category" data-category="memes">
+  <h2>😂 Memes</h2>
+
+  <div class="command-list">
+    <article class="command-card">
+      <h3>topmemes / tm</h3>
+      <p>Muestra el ranking de usuarios con más puntos de popularidad en memes.</p>
+
+      <div class="command-code">
+        <span>Estructura</span>
+        <code>!topmemes</code>
+      </div>
+
+      <div class="command-code">
+        <span>Alias</span>
+        <code>!tm</code>
+      </div>
+    </article>
+
+    <article class="command-card">
+      <h3>mymemes</h3>
+      <p>Muestra tus estadísticas personales de memes.</p>
+
+      <div class="command-code">
+        <span>Estructura</span>
+        <code>!mymemes</code>
+      </div>
+
+      <div class="command-code">
+        <span>Muestra</span>
+        <code>memes registrados, puntos y mejor meme</code>
       </div>
     </article>
   </div>
@@ -2205,6 +2243,90 @@
           <li>Canales de texto normales.</li>
           <li>Canales de anuncios.</li>
         </ul>
+      </div>
+    </article>
+  </div>
+</div>
+
+<div class="command-category" data-category="admin-memes">
+  <h2>😂 Admin: Memes</h2>
+
+  <div class="command-list">
+    <article class="command-card">
+      <h3>setmemeschannel</h3>
+      <p>Configura o desactiva el canal donde se registrarán memes y puntos de popularidad.</p>
+
+      <div class="command-code">
+        <span>Estructura</span>
+        <code>!setmemeschannel #canal</code>
+      </div>
+
+      <div class="command-code">
+        <span>Desactivar</span>
+        <code>!setmemeschannel off</code>
+      </div>
+    </article>
+
+    <article class="command-card">
+      <h3>setemojiup</h3>
+      <p>Configura el emoji que contará como voto positivo para sumar puntos de popularidad.</p>
+
+      <div class="command-code">
+        <span>Estructura</span>
+        <code>!setemojiup &lt;emoji&gt;</code>
+      </div>
+
+      <div class="command-code">
+        <span>Ejemplo</span>
+        <code>!setemojiup 🔥</code>
+        <span> Emoji custom</span>
+        <code>!setemojiup 161361611</code>
+
+      </div>
+    </article>
+
+    <article class="command-card">
+      <h3>setmemesreward</h3>
+      <p>Configura recompensas automáticas cuando un meme llega a cierta cantidad de puntos.</p>
+
+      <div class="command-code">
+        <span>Desactivar</span>
+        <code>!setmemesreward off</code>
+      </div>
+
+      <div class="command-code">
+        <span>Dinero</span>
+        <code>!setmemesreward money 500 10</code>
+      </div>
+
+      <div class="command-code">
+        <span>Item</span>
+        <code>!setmemesreward item ticket 1 15</code>
+      </div>
+
+      <div class="command-code">
+        <span>Mensaje</span>
+        <code>!setmemesreward message "🎉 {user} llegó a {points} puntos." 10</code>
+      </div>
+
+      <div class="command-code">
+        <span>Dar rol</span>
+        <code>!setmemesreward addrol @Memero 25</code>
+      </div>
+
+      <div class="command-code">
+        <span>Quitar rol</span>
+        <code>!setmemesreward removerol @Castigado 20</code>
+      </div>
+    </article>
+
+    <article class="command-card">
+      <h3>memesconfig</h3>
+      <p>Muestra la configuración actual del sistema de memes.</p>
+
+      <div class="command-code">
+        <span>Estructura</span>
+        <code>!memesconfig</code>
       </div>
     </article>
   </div>
