@@ -262,11 +262,11 @@
             <p>Juega a la tragamonedas apostando dinero.</p>
             <div class="command-code">
               <span>Estructura</span>
-              <code>!slots &lt;cantidad&gt;</code>
+              <code>!slots &lt;cantidad&gt; [x1|x2|x3]</code>
             </div>
             <div class="command-code">
               <span>Ejemplo</span>
-              <code>!slots 100</code>
+              <code>!slots 100 x2</code>
             </div>
           </article>
 
@@ -1349,17 +1349,22 @@
 
       <div class="command-code">
         <span>Estructura</span>
-        <code>!addslot &lt;emoji&gt; &lt;rareza&gt; &lt;multiplicador&gt; &lt;weight&gt; &lt;maxPorColumna&gt;</code>
+        <code>!addslot &lt;emoji&gt; &lt;rareza&gt; &lt;multiplicador&gt; &lt;weight&gt; &lt;maxPorColumna&gt; [normal|death|del|-]</code>
       </div>
 
       <div class="command-code">
-        <span>Ejemplo</span>
+        <span>Ejemplo normal</span>
         <code>!addslot 🍒 comun 2 20 2</code>
       </div>
 
       <div class="command-code">
+        <span>Ejemplo death</span>
+        <code>!addslot 💀 maldito 2 5 1 death</code>
+      </div>
+
+      <div class="command-code">
         <span>Ejemplo con otro símbolo</span>
-        <code>!addslot 💎 legendario 10 2 1</code>
+        <code>!addslot 💎 legendario 10 2 1 normal</code>
       </div>
 
       <div class="command-extra">
@@ -1370,6 +1375,16 @@
           <li><code>multiplicador</code> — cuánto multiplica la apuesta cuando el símbolo paga.</li>
           <li><code>weight</code> — peso/probabilidad relativa de aparición del símbolo.</li>
           <li><code>maxPorColumna</code> — máximo de veces que ese símbolo puede aparecer por columna.</li>
+          <li><code>normal|death|del|-</code> — efecto opcional del símbolo. Si no lo pones, será <code>normal</code>.</li>
+        </ul>
+      </div>
+
+      <div class="command-extra">
+        <strong>Efectos:</strong>
+        <ul>
+          <li><code>normal</code> o <code>-</code> — el símbolo paga normalmente según su multiplicador.</li>
+          <li><code>death</code> o <code>del</code> — si el símbolo forma una combinación ganadora, en lugar de pagar aplica una penalización extra.</li>
+          <li>Ejemplo: si apuestas <code>100</code> y cae un símbolo <code>death</code> con multiplicador <code>x2</code>, pierdes la apuesta y además una penalización de <code>200</code>.</li>
         </ul>
       </div>
 
@@ -1394,9 +1409,9 @@
       <div class="command-extra">
         <strong>Notas:</strong>
         <ul>
-          <li>Si agregas un emoji que ya existe, se actualiza su rareza, multiplicador, weight y máximo por columna.</li>
-          <li>La rareza no tiene una lista cerrada en este archivo; puedes usar nombres personalizados.</li>
-          <li>El orden del listado interno prioriza weight, multiplicador y emoji según la base de datos.</li>
+          <li>Si agregas un emoji que ya existe, se actualiza su rareza, multiplicador, weight, máximo por columna y efecto.</li>
+          <li>La rareza no tiene una lista cerrada; puedes usar nombres personalizados.</li>
+          <li>El efecto <code>death</code> solo se aplica si el símbolo forma una combinación ganadora.</li>
         </ul>
       </div>
     </article>
@@ -1447,6 +1462,7 @@
           <li>Multiplicador.</li>
           <li>Weight.</li>
           <li>Máximo por columna.</li>
+          <li>Efecto: <code>Normal</code> o <code>Death</code>.</li>
           <li>Total de símbolos configurados.</li>
         </ul>
       </div>
@@ -1460,41 +1476,83 @@
         </ul>
       </div>
     </article>
+
     <article class="command-card">
-  <h3>setslotspartialwin</h3>
-  <p>Activa o desactiva el premio parcial de slots cuando salen 2 símbolos iguales.</p>
+      <h3>setslotspartialwin</h3>
+      <p>Activa o desactiva el premio parcial de slots cuando salen 2 símbolos iguales.</p>
 
-  <div class="command-code">
-    <span>Estructura</span>
-    <code>!setslotspartialwin &lt;true|false&gt;</code>
-  </div>
+      <div class="command-code">
+        <span>Estructura</span>
+        <code>!setslotspartialwin &lt;true|false&gt;</code>
+      </div>
 
-  <div class="command-code">
-    <span>Ejemplo: activar</span>
-    <code>!setslotspartialwin true</code>
-  </div>
+      <div class="command-code">
+        <span>Ejemplo: activar</span>
+        <code>!setslotspartialwin true</code>
+      </div>
 
-  <div class="command-code">
-    <span>Ejemplo: desactivar</span>
-    <code>!setslotspartialwin false</code>
-  </div>
+      <div class="command-code">
+        <span>Ejemplo: desactivar</span>
+        <code>!setslotspartialwin false</code>
+      </div>
 
-  <div class="command-extra">
-    <strong>Valores aceptados:</strong>
-    <ul>
-      <li><code>true</code>, <code>on</code>, <code>1</code>, <code>yes</code>, <code>si</code>, <code>sí</code> — activa el premio parcial.</li>
-      <li><code>false</code>, <code>off</code>, <code>0</code>, <code>no</code> — desactiva el premio parcial.</li>
-    </ul>
-  </div>
+      <div class="command-extra">
+        <strong>Valores aceptados:</strong>
+        <ul>
+          <li><code>true</code>, <code>on</code>, <code>1</code>, <code>yes</code>, <code>si</code>, <code>sí</code> — activa el premio parcial.</li>
+          <li><code>false</code>, <code>off</code>, <code>0</code>, <code>no</code> — desactiva el premio parcial.</li>
+        </ul>
+      </div>
 
-  <div class="command-extra">
-    <strong>Comportamiento:</strong>
-    <ul>
-      <li>Activado: las tiradas con 2 símbolos iguales pueden dar premio.</li>
-      <li>Desactivado: solo pagan las tiradas con 3 símbolos iguales.</li>
-    </ul>
+      <div class="command-extra">
+        <strong>Comportamiento:</strong>
+        <ul>
+          <li>Activado: las tiradas con 2 símbolos iguales pueden dar premio.</li>
+          <li>Desactivado: solo pagan las tiradas con 3 símbolos iguales.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="command-card">
+      <h3>setslotslines</h3>
+      <p>Activa o desactiva las líneas múltiples de slots.</p>
+
+      <div class="command-code">
+        <span>Estructura</span>
+        <code>!setslotslines &lt;on|off&gt;</code>
+      </div>
+
+      <div class="command-code">
+        <span>Ejemplo: activar</span>
+        <code>!setslotslines on</code>
+      </div>
+
+      <div class="command-code">
+        <span>Ejemplo: desactivar</span>
+        <code>!setslotslines off</code>
+      </div>
+
+      <div class="command-extra">
+        <strong>Valores aceptados:</strong>
+        <ul>
+          <li><code>true</code>, <code>on</code>, <code>1</code>, <code>yes</code>, <code>si</code>, <code>sí</code> — activa las líneas múltiples.</li>
+          <li><code>false</code>, <code>off</code>, <code>0</code>, <code>no</code> — desactiva las líneas múltiples.</li>
+        </ul>
+      </div>
+
+      <div class="command-extra">
+        <strong>Comportamiento:</strong>
+        <ul>
+          <li>Desactivado: slots usa solo la línea central, como antes.</li>
+          <li>Activado: los usuarios pueden usar <code>x1</code>, <code>x2</code> y <code>x3</code>.</li>
+          <li><code>x1</code> cobra la apuesta una vez y usa solo la línea central.</li>
+          <li><code>x2</code> cobra la apuesta dos veces y activa arriba, centro y abajo.</li>
+          <li><code>x3</code> cobra la apuesta tres veces y activa arriba, centro, abajo y diagonales.</li>
+        </ul>
+      </div>
+    </article>
   </div>
-</article>
+</div>
 
 <article class="command-card">
   <h3>setbetlimits</h3>
